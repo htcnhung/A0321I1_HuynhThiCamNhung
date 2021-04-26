@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Caculator</h1>
+<input type="number" value="number1" id="number1"/>
+<input type="number" type="number" value="numer2" id="number2"/>
+<br/>
+<br/>
+<!--<button  onclick="add()">Addition(+)</button>-->
+<!--<button  onclick="sub()">Subtracion(-)</button>-->
+<!--<button  onclick="mul()">Multiplication(X)</button>-->
+<!--<button  onclick="div()">Division(:)</button>-->
+
+<button onclick="cal('a')">Addition(+)</button>
+<button onclick="cal('b')">Subtracion(-)</button>
+<button onclick="cal('c')">Multiplication(X)</button>
+<button onclick="cal('d')">Division(:)</button>
+<br/>
+<br/>
+<span>Result: </span>
+<div id="result"></div>
+
+<script>
+    function cal(hu) {
+        let num1 = document.getElementById("number1").value;
+        let number1 = parseInt(num1);
+        let num2 = document.getElementById("number2").value;
+        let number2 = parseInt(num2);
+
+        if (hu === 'a') {
+            document.getElementById("result").innerHTML = "" + (number1 + number2);
+        } else if (hu === "b") {
+            document.getElementById("result").innerHTML = "" + (number1 - number2);
+        } else if (hu === "c") {
+            document.getElementById("result").innerHTML = "" + (number1 * number2);
+        } else if (hu === "d"){
+            document.getElementById("result").innerHTML = "" + (number1 / number2);
+        }
+    }
+
+    //  CÁCH 2
+    // function add() {
+    //     let num1 = document.getElementById("number1").value;
+    //     let number1 = parseInt(num1);
+    //     let num2 = document.getElementById("number2").value;
+    //     let number2 = parseInt(num2);
+    //     document.getElementById("result").innerHTML = "" + (number1+number2);
+    // }
+    // function sub() {
+    //     let num1 = document.getElementById("number1").value;
+    //     let number1 = parseInt(num1);
+    //     let num2 = document.getElementById("number2").value;
+    //     let number2 = parseInt(num2);
+    //     document.getElementById("result").innerHTML = "" + (number1-number2);
+    // }
+    // function mul() {
+    //     let num1 = document.getElementById("number1").value;
+    //     let number1 = parseInt(num1);
+    //     let num2 = document.getElementById("number2").value;
+    //     let number2 = parseInt(num2);
+    //     document.getElementById("result").innerHTML = "" + (number1*number2);
+    // }
+    // function div() {
+    //     let num1 = document.getElementById("number1").value;
+    //     let number1 = parseInt(num1);
+    //     let num2 = document.getElementById("number2").value;
+    //     let number2 = parseInt(num2);
+    //     document.getElementById("result").innerHTML = "" + (number1/number2);
+    // }
+</script>
+</body>
+
+</html>

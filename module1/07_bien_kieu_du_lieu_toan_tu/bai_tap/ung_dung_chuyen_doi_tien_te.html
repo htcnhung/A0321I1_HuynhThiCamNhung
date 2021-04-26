@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form >
+<table>
+        <tr>
+            <th>Amount</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                <input id="amount" type="number"; style="height: 20px"/>
+            </td>
+            <td>
+                <select id="fromCurrency" style="width: 150px; height: 25px">
+                    <option value="VND">VND</option>
+                    <option value="USD">USD</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CNY">CNY</option>
+                </select>
+            </td>
+            <td>
+                <select id="toCurrency" style="width: 150px; height: 25px">
+                    <option value="USD">USD</option>
+                    <option value="VND">VND</option>
+                    <option value="JPY">JPY</option>
+                    <option value="CNY">CNY</option>
+                </select>
+            </td>
+            <td>
+                <button style="color: cornflowerblue; height: 25px" onclick="changeMoney()">Convert</button>
+            </td>
+        </tr>
+        <td style="color: blue" colspan="4">Result: <p id="result"></p></td>
+</table>
+</form>
+
+<script>
+    function changeMoney() {
+        let amount = document.getElementById("amount").value;
+        let money = parseInt(amount);
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+        if (fromCurrency === toCurrency) {
+            document.getElementById("result").innerHTML = "" + money;
+        }
+        if (fromCurrency === "VND" && toCurrency === "USD"){
+            document.getElementById("result").innerHTML = "" + money/23000;
+        }
+        if (fromCurrency === "VND" && toCurrency === "JPY"){
+            document.getElementById("result").innerHTML = "" + money*0.0048;
+        }
+        if (fromCurrency === "VND" && toCurrency === "CNY"){
+            document.getElementById("result").innerHTML = "" + (money*0.28)/1000;
+        }
+        if (fromCurrency === "USD" && toCurrency === "VND"){
+            document.getElementById("result").innerHTML = "" + money*23000;
+        }
+        if (fromCurrency === "USD" && toCurrency === "JPY"){
+            document.getElementById("result").innerHTML = "" + money*109.21;
+        }
+        if (fromCurrency === "USD" && toCurrency === "CNY"){
+            document.getElementById("result").innerHTML = "" + money*6.54;
+        }
+    }
+
+</script>
+</body>
+</html>

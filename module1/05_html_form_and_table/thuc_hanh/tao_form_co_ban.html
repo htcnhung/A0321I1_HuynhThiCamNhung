@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="font-family:Tahoma">
+<form method="get" action="simpleform.html">
+    <h2>Order Form</h2>
+    <p><b>What would you like to buy?</b></p>
+    <select style="width: 200px">
+        <option value=" ">A</option>
+        <option value=" ">B (+ 5$) </option>
+        <option value=" ">C (+ 10$) </option>
+    </select>
+    <p><b>How many would you like to order?</b></p>
+    <input type="radio" name="rd"/> > 1 - $10 </br>
+    <input type="radio" name="rd"/> > 2 - $20 </br>
+    <input type="radio" name="rd"/> > 3 - $25 </br>
+    <br/>
+    <label><b>Name
+        <span style="color: red"> *</span>
+    </b>
+        <br/>
+        <br/>
+        <input type="text" name="firstname" placeholder="FirstName" required=""/>
+        <input type="text" name="lastname" placeholder="LastName" required=""/>
+    </label> <br/>
+    <br/>
+    <label for="email"><b>Email</b> <br/>
+        <br/>
+        <input id="email" type="text" style="width: 400px">
+    </label> <br/>
+    <br/>
+    <label><b>Phone Number</b> <br/>
+        <br/>
+        <input type="text" style="width: 40px" maxlength="4"/> -
+        <input type="text" style="width: 40px" maxlength="3"/> -
+        <input type="text" style="width: 40px" maxlength="3"/>
+<!--        Hỏi thầy cách chỉ cho phép nhập số bằng type text trong thẻ input-->
+    </label>
+    <br/>
+    <br/>
+    <input type="submit" value="Submit"/>
+</form>
+</div>
+</body>
+</html>

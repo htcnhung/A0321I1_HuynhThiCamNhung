@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="number" id="month"/>
+    <button onclick="tinhSongay()">Tính số ngày</button>
+    <script>
+        function tinhSongay() {
+            let thang = parseInt(document.getElementById("month").value);
+
+            switch (thang) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    document.write("31 days ");
+                    break;
+                case 2:
+                    document.write("28 days or 29 days ");
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.write("30 days");
+                    break;
+                default:
+                    alert("Please input your month again!")
+            }
+        }
+
+    </script>
+</form>
+</body>
+</html>

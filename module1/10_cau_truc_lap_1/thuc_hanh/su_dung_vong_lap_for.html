@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng vòng lặp for</title>
+</head>
+<body>
+<!--Bài 1: Viết chương trình hiển thị chuỗi “The number is N” 5 lần sử dụng vòng lặp for. Với N sẽ hiển thị từ 0 đến 5.-->
+<h2>JavaScript</h2>
+<!--<p id="demo"></p>-->
+
+ <!--    var text = "";-->
+ <!--    for (i = 0; i <5; i++){-->
+ <!--        text += "The number is N" + i + "<br>";-->
+ <!--    }-->
+ <!--    document.getElementById("demo").innerHTML = text;-->
+
+<!--Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0. Tính tổng các phần tử từ 1 đến số vừa nhập vào.-->
+<p id="demo"></p>
+<script>
+var text ="";
+var num = parseInt(prompt("Please enter your number!"));
+var total = 0;
+if (num>0){
+    for (i=1; i<=num; i++){
+        total = total + i;
+        text = "Tổng các phần tử từ 1 đến số vừa nhập là: " +total;
+    }
+    document.getElementById("demo").innerHTML = text;
+} else {
+    alert("Vui lòng nhập số lớn hơn 0!")
+}
+</script>
+</body>
+</html>
