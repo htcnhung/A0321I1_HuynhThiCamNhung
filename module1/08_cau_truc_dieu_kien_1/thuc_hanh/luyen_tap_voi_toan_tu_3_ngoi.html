@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toán tử 3 ngôi</title>
+</head>
+<body>
+<script>
+    //BÀI TẬP 1
+    // let a = parseInt(prompt("Enter number a: "));
+    // let b = parseInt(prompt("Enter number b: "));
+    //  result = ((a + b) < 4) ? "Below" : "Over";
+    //  alert(result);
+
+     //BÀI TẬP 2
+    // Bài 2: Viết chương trình nhập vào giá trị cho chuỗi message.
+    //
+    //     Nếu giá trị nhập vào là Employee thì hiển thị chuỗi Hello.
+    //
+    //     Còn lại nếu giá trị nhập vào là Director thì hiển thị chuỗi Greetings
+    //
+    // Còn lại nếu giá trị nhập vào chuỗi rỗng thì hiển thị No login
+    let login = prompt("Type a message: ");
+    let message = (login == 'Employee') ?
+        'Hello' :
+        (login == 'Director') ?
+            'Greetings' :
+            (login == '') ?
+                'No login' :
+                'Result not found';
+    alert(message);
+
+</script>
+</body>
+</html>
