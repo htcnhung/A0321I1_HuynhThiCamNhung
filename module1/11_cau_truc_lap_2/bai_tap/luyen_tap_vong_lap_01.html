@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<script>
+    //BÀI 1: Sử dụng vòng lặp để đếm từ 1 đến 100. Khi số là 99, hiển thị hộp thoại thông báo là đã hoàn thành.
+    // let count = 0;
+    // let N = 1;
+    // for (N = 1; N < 100; N++) {
+    //     count++;
+    // }
+    // if (count === 99) {
+    //     alert("Đã hoàn thành");
+    // }
+
+    //BÀI 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập.
+    // Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ.
+    // Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+    // let temp = parseInt(prompt("Enter temperature: "));
+    // if (temp > 100) {
+    //     document.write("Vui lòng giảm nhiệt độ!");
+    // } else {
+    //     alert("Nhiệt độ bây giờ là: " + temp);
+    //     if (temp < 20 ){
+    //         document.write("Vui lòng tăng nhiệt độ!");
+    //     } else {
+    //         alert("Nhiệt độ bây giờ là: " + temp);
+    //     }
+    // }
+
+    //BÀI 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+    //Phương trình tổng quát: Xn+2 = Xn+1 + Xn. Hoặc Xn = X(n-1) + X(n-2) với n>= 3.
+    // var a = 0;
+    // var b = 1;
+    // document.write(a + " " + b + " ");
+    // let c;
+    // for (let i = 0; i < 18; i++) {
+    //    c = a + b;
+    //    document.write(c + " ");
+    //    a = b;
+    //    b = c;
+    // }
+    //BÀI 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+    // let check = true;
+    // let a = 0;
+    // let b = 1;
+    // let c;
+    // while (check){
+    //     c = a + b;
+    //     a = b;
+    //     b = c;
+    //     if (c % 5 === 0){
+    //         alert("Số đầu tiên chia hết cho 5 là: " + c);
+    //         break;
+    //     }
+    // }
+
+    //BÀI 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+    //Hỏi lại thầy: Tính tay kq là 10945 nhưng chạy code lại ra 10946???
+    // var a = 0;
+    // var b = 1;
+    // var c;
+    // for (let i = 0; i < 18; i++) {
+    //     c = a + b;
+    //     a = b;
+    //     b = c;
+    //     sum = a + b + c;
+    // }
+    // document.write(" Tổng của 20 số đầu tiên trong dãy fibonacci là: " + sum);
+
+    //Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+    // var sum = 0;
+    // var N = 7;
+    // var i = 1;
+    // for (let i = 1; i <31; i++){
+    //     N = N *i;
+    //     sum = sum + N;
+    // }
+    // document.write("Tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên là: " + sum);
+
+    //BÀI 7: Hãy viết một chương trình in ra các số từ 1 đến 100.
+    // Nhưng nếu số chia hết cho 3 thì in ra "Fizz", 5 thì in ra "Buzz" thay vì in ra số đó.
+    // Và nếu số đó chia hết cho cả 3 và 5 thì in ra chữ "FizzBuzz".
+    // for (let i = 1; i < 101; i++) {
+    //     if (i % 3 === 0) {
+    //         if (i % 5 === 0) {
+    //             document.write("FizzBuzz" + "</br>");
+    //         } else {
+    //             document.write("Fizz" + "</br>");
+    //         }
+    //     } else if (i % 5 === 0) {
+    //         document.write("Buzz" + "</br>");
+    //     } else {
+    //         document.write(i + "</br>");
+    //     }
+    // }
+//BÀI 8: Game đoán số
+//     Nâng cấp game "Hãy thử đoán xem!"
+//
+//     1. Thiết kế giao diện: Giao diện chỉ gồm 1 Button "Chơi": cho phép người dùng bắt đầu  chơi hoặc chơi lại
+//
+//     2. Mô tả ứng dụng: Khi người dùng nhấn vào button “Chơi”:
+//
+//     Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
+//     Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn
+//     Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán
+//     Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.
+//         Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi
+//     Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại.
+//         Chú ý: Người dùng chỉ được lựa chọn tối đa ba lần
+
+</script>
+</body>
+</html>
