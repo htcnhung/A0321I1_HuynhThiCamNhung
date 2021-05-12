@@ -6,7 +6,29 @@
 </head>
 <body>
 <script>
+    // var arrs = ["code", "gym", "vn"];
+    // console.log(arrs);
+    // arrs.splice(2,1);
+    // console.log(arrs);
 
+    var students = [
+        {
+            id: 1,
+            name: "Huỳnh Thị Cẩm Nhung",
+            address: "Hà Nội"
+        },
+        {
+            id: 2,
+            name: "An Dĩ Mạch",
+            address: "Đà Nẵng"
+        }
+    ];
+    for (i = 0; i < students.length; i++) {
+        if (students[i].id === 1) {
+            students.splice(i, 1);
+        }
+    }
+    console.log(students);
 </script>
 </body>
 </html>
