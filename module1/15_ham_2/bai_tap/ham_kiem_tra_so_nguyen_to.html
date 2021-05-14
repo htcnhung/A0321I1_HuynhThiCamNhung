@@ -22,7 +22,7 @@
         if (number > 10000 || number <=0){
             alert("Vui lòng nhập số nhỏ hơn 10000 và lớn hơn hoặc bằng 1!")
         } else {
-            for (i = 2; i < Math.sqrt(number); i++){
+            for (let i = 2; i < Math.sqrt(number); i++){
                 if (number%i===0){
                     document.getElementById("hienThi").innerHTML = "Đây không phải là số nguyên tố."
                 } else {

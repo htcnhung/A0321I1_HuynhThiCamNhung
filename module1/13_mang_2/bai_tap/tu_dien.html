@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h3>Từ điển Anh - Việt & Việt Anh</h3>
+<p>
+    <label for="inputWords"></label><input type="text" id="inputWords"/>
+    <input type="button" id="check" value="Search" onclick="check()"/>
+    <br/>
+<p id="hienThi"></p>
+</p>
+<script>
+    var english = ["hello", "chicken", "dog", "cat", "hot", "cold", "cool", "go", "eat"];
+    var vietNamese = ["Xin chào", "Con gà", "Con chó", "Con mèo", "Nóng", "Lạnh", "Mát mẻ", "Đi", "Ăn"];
+
+    function check() {
+        var word = document.getElementById("inputWords").value;
+        let check = false;
+        for (let i = 0; i < english.length; i++) {
+            if (word === english[i]) {
+                document.getElementById("hienThi").innerHTML = "Kết quả tìm kiểm là: " + vietNamese[i];
+                check = true;
+                break;
+            } else if (word === vietNamese[i]) {
+                document.getElementById("hienThi").innerHTML = "Kết quả tìm kiểm là: " + english[i];
+                check = true;
+                break;
+            }
+        }
+// check = true;
+        if (!check) {
+            alert("Không tìm thấy từ vựng, vui lòng thử từ khác!")
+        }
+    }
+</script>
+</body>
+</html>
