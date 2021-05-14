@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn.
+    // Ví dụ nếu bạn nhập vào 025468 thì kết quả của chương trình sẽ là 0-254-6-8.
+    let string = prompt("Please input a number: "); //243678
+    let result = [string[0]];
+    for (let x = 0; x < string.length; x++){ //length này chỉ độ dài của chuỗi chứ không phải đang đề cập đến lenght của mảng
+        // , index bắt đàu từ 0 như mảng (số phần tử của chuỗi)
+        if (parseInt(string[x]) % 2 === 0 && string[x+1] % 2 === 0){
+            result.push('-', string[x+1]);
+        } else {
+            result.push(string[x+1]);
+        }
+    }
+    document.writeln(result.join(''));
+</script>
+</body>
+</html>
