@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<!--Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
+<p> Nhập bán kính hình tròn tại đây: <input id="banKinh" type="number" placeholder="type a number (m)">
+</p>
+<br/>
+<br/>
+<input type="button" onclick=chuVi() value="Tính chu vi"/>
+<input type="button" onclick=dienTich() value="Tính diện tích"/>
+<p id="hienThi"></p>
+<script>
+    function chuVi() {
+        let r = parseInt(document.getElementById("banKinh").value);
+        c = Math.round(r * 2 * Math.PI);
+        document.getElementById("hienThi").innerHTML = "Chu vi hình tròn là: " + c + " m";
+    }
+    function dienTich() {
+        let r = parseInt(document.getElementById("banKinh").value);
+        s = Math.round(r * r * Math.PI);
+        document.getElementById("hienThi").innerHTML = "Diện tích hình tròn là: " + s + " m²";
+    }
+</script>
+</body>
+</html>

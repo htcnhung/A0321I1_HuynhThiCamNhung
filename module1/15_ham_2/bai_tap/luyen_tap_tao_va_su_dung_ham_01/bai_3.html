@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<!--Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai,
+hiển thị hộp thoại thông báo cho người dùng. -->
+<!--Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.-->
+<p>
+    Number 1: <input type="number" id="number1"/> <br/>
+    <br/>
+    Number 2: <input type="number" id="number2"/>
+    <br/>
+    <br/>
+    <input type="button" id="check" value="Check" onclick="check()" />
+    <br/>
+<p id="hienThi"></p>
+</p>
+<script>
+    function check() {
+        let a = parseInt(document.getElementById("number1").value);
+        let b = parseInt(document.getElementById("number2").value);
+        if (a>b){
+            alert("Số thứ nhất lớn hơn số thứ hai!");
+        } else {
+            let sum = a + b;
+            document.getElementById("hienThi").innerHTML = "Tổng của hai số bạn vừa nhập là: " + sum;
+        }
+    }
+</script>
+</body>
+</html>
