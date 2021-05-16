@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<!--Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. -->
+<!--Nếu là nguyên dương trả về true, ngược lại trả về false.-->
+<p>
+    <label>Nhập vào một số bất kỳ: </label>
+    <input id="value" placeholder="Input a number here!" type="number"/>
+    <input type="button" id="check" value="Check" onclick="checkInteger()"/>
+</p>
+<script>
+    function checkInteger() {
+        let x = document.getElementById("value").value;
+        if (Number.isInteger(x)) {
+            if (x > 0) {
+                alert("True");
+            } else {
+                alert("False");
+            }
+        } else {
+            alert("False");
+        }
+    }
+</script>
+</body>
+</html>

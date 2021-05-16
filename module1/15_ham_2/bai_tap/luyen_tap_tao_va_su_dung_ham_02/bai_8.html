@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<!--Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.-->
+<h3>Đảo ngược mảng</h3>
+<p>
+    <label>Bạn muốn nhập bao nhiêu số nguyên: </label>
+    <input id="soPhantu" type="number" oninput="soPhantu()" placeholder="Nhập số lượng số nguyên tại đây"/>
+    <br/>
+    <br/>
+    <label>Nhập các số nguyên tại đây: </label>
+    <input id="number" type="number"/>
+    <input id="addNumber" type="button" onclick="addNumber()" value="Thêm vào">
+    <br/>
+    <br/>
+    <input id="yourNumbers" type="button" value="Hiển thị dãy số nguyên đã nhập" onclick="yourNumbers()">
+    <input id="reverse" type="button" value="Đảo ngược" onclick="reverse()">
+    <br/>
+    <br/>
+<p id="hienThi"></p>
+</p>
+<script>
+    var array = [];
+    let n = 0;
+    soPhantu();
+
+    function soPhantu() {
+        n = parseInt(document.getElementById("soPhantu").value);
+    }
+
+    function addNumber() {
+        let num;
+        if (array.length < n) {
+            num = parseInt(document.getElementById("number").value);
+            array.push(num);
+            alert("Bạn vừa thêm " + num + " vào dãy số nguyên của mình");
+        } else {
+            alert("Bạn đã nhập đủ số phần tử của mảng!")
+        }
+    }
+
+    function yourNumbers() {
+        document.getElementById("hienThi").innerHTML = "Dãy số nguyên bạn vừa nhập là: " + array.toString();
+    }
+
+    function reverse() {
+        document.getElementById("hienThi").innerHTML = "Dãy số sau khi đảo ngược của bạn là: " + array.reverse().toString();
+    }
+</script>
+</body>
+</html>

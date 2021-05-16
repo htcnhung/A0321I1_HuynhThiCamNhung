@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<!--Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm
+tra xem ký tự bất kỳ đó có nằm trong mảng không. -->
+<!--Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.-->
+<p>
+    <label>Input the character that you want to check here: </label>
+    <input id="yourCharacter" type="text"/>
+    <input id="check" type=button value="Check" onclick="check()">
+    <br/>
+    <br/>
+<p id="hienThi"></p>
+</p>
+<script>
+    let array = ["a", "b", "c", "j", "3", 2, 5, "i", "a", "a", "m", "t", "a", "o", "j"];
+
+    function check() {
+        let count = 0;
+        let x = document.getElementById("yourCharacter").value;
+        for (let i = 0; i < array.length; i++) {
+            if (x === array[i]) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            document.getElementById("hienThi").innerHTML = "Your character " + "'" + x + "' " + "is found "
+                + count + " times in this array";
+        } else {
+            document.getElementById("hienThi").innerHTML = "-1";
+        }
+    }
+</script>
+</body>
+</html>

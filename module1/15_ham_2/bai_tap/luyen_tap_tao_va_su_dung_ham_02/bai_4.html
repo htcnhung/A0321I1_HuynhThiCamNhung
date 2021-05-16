@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<!--Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. -->
+<!--Nếu là ký tự số hàm trả về true, ngược lại trả về false.-->
+<p>
+    <label>Nhập vào ký tự bất kỳ: </label>
+    <input id="value" placeholder="write something here!" type="text"/>
+    <input type="button" id="check" value="Check" onclick="check()"/>
+</p>
+<script>
+    function check()
+    {
+        let x = document.getElementById("value").value;
+        if (isNaN(x)) {
+            alert("False");
+        } else {
+            alert("True");
+        }
+    }
+</script>
+</body>
+</html>

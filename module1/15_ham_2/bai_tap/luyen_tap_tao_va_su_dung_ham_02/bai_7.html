@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<!--Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.-->
+<h3>Hoán đổi số</h3>
+<p>
+    <label>Number 1</label>
+    <input id="number1" type="number" placeholder="enter a number">
+    <br/>
+    <br/>
+    <label>Number 2</label>
+    <input id="number2" type="number" placeholder="enter a number">
+    <br/>
+    <br/>
+    <input type="button" id="display" value="Hiển thị số vừa nhập" onclick="display()"/>
+<input type="button" id="convert" value="Hoán đổi số vừa nhập" onclick="convert()"/>
+    <br/>
+<p id="hienThi"></p>
+</p>
+<script>
+    function display() {
+        let a = parseInt(document.getElementById("number1").value);
+        let b = parseInt(document.getElementById("number2").value);
+        document.getElementById("hienThi").innerHTML = "Số bạn vừa nhập là:" + "</br>" + "Number 1: " + a + "</br>" +
+            "Number 2: " + b;
+    }
+    function convert(){
+        let x = parseInt(document.getElementById("number1").value);
+        let y = parseInt(document.getElementById("number2").value);
+        document.getElementById("hienThi").innerHTML = "Kết quả sau khi hoán đổi:" + "</br>" + "Number 1: " + y + "</br>" +
+            "Number 2: " + x;
+    }
+</script>
+</body>
+</html>

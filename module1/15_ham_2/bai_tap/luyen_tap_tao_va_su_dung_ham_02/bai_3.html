@@ -5,6 +5,22 @@
     <title>Bài 3</title>
 </head>
 <body>
+<!--Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.-->
+<script>
+    let num = parseInt(prompt("Nhập số nguyên dương bất kỳ: "));
+    tinhGiaithua(num);
+    function tinhGiaithua(value) {
+        let n = 1;
+        if (value === 0) {
+            alert(value + "!" + "=" + n);
+        } else {
+            for (let i = 1; i <= value; i++) {
+                n = n * i;
+            }
+            alert(value + "!" + "=" + n);
+        }
+    }
 
+</script>
 </body>
 </html>
