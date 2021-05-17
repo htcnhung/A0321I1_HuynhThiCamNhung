@@ -5,6 +5,82 @@
     <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
 </head>
 <body>
+<h3>Ứng dụng quản lý sản phẩm</h3>
+<label>
+    Nhập tên sản phẩm:
+    <input type="text" id="product" placeholder="Nhập tên sản phẩm cần thêm tại đây"/>
+    <input id="addProduct" type="button" value="Thêm" onclick="addProduct()"/>
+    <br/>
+    <br/>
+    <input id="display" type="button" value="Danh sách sản phẩm" onclick="displayProduct()"/>
+    <p id="soLuong" style="margin-left: 400px"></p>
+</label>
+<p id="hienThi"></p>
+<script>
+    var list = ["Sony Xperia", "Samsung Galaxy", "Nokia 6", "Xiaomi Redmi Note 4",
+        "Apple Iphone 12", "Xiaomi 5s Plus", "Fujitsu F-04E", "Oppo A71"];
+    let isShow = true;
 
+    function addProduct() {
+        let newProduct = document.getElementById("product").value;
+        if (newProduct !== "") {
+            list.push(newProduct);
+            isShow = true;
+            displayProduct();
+        } else {
+            alert("Vui lòng nhập tên sản phẩm!!!")
+        }
+    }
+
+    function displayProduct() {
+        if (isShow) {
+            isShow = false;
+            document.getElementById("product").innerHTML = "";
+            let temp = "<table style='border-collapse:collapse'>";
+            temp += "<tr style='border:1px solid black; background-color: aquamarine'>" +
+                "<th style='border:1px solid black; width: 50px; text-align: center'>STT</th>" +
+                "<th style='border:1px solid black; width: 300px'>Tên sản phẩm</th>" +
+                "<th style='border:1px solid black; width: 200px '>Thao tác</th>" +
+                "</tr>";
+            for (let i = 0; i < list.length; i++) {
+                temp += "<tr style='border:1px solid black'>" +
+                    "<td style='border:1px solid black; width: 50px; text-align: center'> " + (i + 1) + "</td>" +
+                    "<td style='border:1px solid black; width: 300px'>" + list[i] + "</td>" +
+                    "<td style='border:1px solid black; width: 200px; text-align: center '>" +
+                    "<input type='button' value='Sửa' onclick='viewFormEditProduct(" + i + ")'>" +
+                    "<input type='button' value='Xóa' onclick='deleteProduct(" + i + ")'>" +
+                    "</td>" +
+                    "</tr>"
+            }
+            temp = temp + "</table>";
+
+            document.getElementById("hienThi").innerHTML = temp;
+            document.getElementById("soLuong").innerHTML = "Số lượng sản phẩm: " + list.length;
+        } else {
+            isShow = true;
+            document.getElementById("hienThi").innerHTML = "";
+            document.getElementById("soLuong").innerHTML = "";
+        }
+    }
+
+    function viewFormEditProduct(index) {
+        displayProduct();
+        let newList = "<input id='editProduct' type='text' value='" + list[index] + "'><input type='button' value='Submit' onclick='editProduct(" + index + ")'>";
+        document.getElementById("hienThi").innerHTML = newList;
+    }
+
+    function editProduct(index) {
+        list[index] = document.getElementById("editProduct").value;
+        displayProduct();
+    }
+
+    function deleteProduct(index) {
+        if (confirm("Bạn có muốn xóa sản phẩm " + list[index] + " này không?")) {
+            list.splice(index, 1);
+        }
+        isShow = true;
+        displayProduct();
+    }
+</script>
 </body>
 </html>
