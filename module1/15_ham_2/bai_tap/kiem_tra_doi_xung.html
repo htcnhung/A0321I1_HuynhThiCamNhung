@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<h3>Kiểm tra từ đối xứng</h3>
+<label>
+    <input id="inputWord" type="text"/>
+    <input id="check" type="button" onclick="palindrome()" value="Check"/>
+</label>
+<p id="hienThi"></p>
+<script>
+    //CÁCH 1
+    // function palindrome() {
+    //     let word = document.getElementById("inputWord").value;
+    //     let re = /[\W_]/g;
+    //     let lowRegStr = word.toLowerCase().replace(re,"");
+    //     let reverseStr = lowRegStr.split("").reverse().join("");
+    //     if ( reverseStr === lowRegStr) {
+    //         alert("Đây là từ đôi xứng");
+    //     } else {
+    //         alert("Đây không phải là từ đối xứng");
+    //     }
+    // }
+
+    //CÁCH 2
+    function palindrome() {
+        let word = document.getElementById("inputWord").value;
+        var re = /[^A-Za-z0-9]/g;
+        word = word.toLowerCase().replace(re, '');
+        var len = word.length;
+        for (var i = 0; i < len/2; i++) {
+            if (word[i] !== word[len - 1 - i]) {
+                alert("Đây không phải là từ đôi xứng");
+            }
+        }
+        alert("Đây là từ đôi xứng");
+    }
+
+</script>
+</body>
+</html>
