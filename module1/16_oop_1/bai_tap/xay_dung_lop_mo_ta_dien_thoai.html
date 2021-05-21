@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+<script>
+    // Có một thông số về trạng thái pin tính bằng đơn vị số nguyên (tối đa 100 đv)
+    // Có một vùng nhớ dùng để lưu tin nhắn đang soạn thảo.
+    //     Có một vùng nhớ dùng để lưu tin nhắn trong hộp thư đến.
+    //     Có một vùng nhớ dùng để lưu tin nhắn đã gửi.
+    //     Có chức năng kiểm tra trạng thái điện thoại bật hay tắt.
+    //     Có chức năng bật và tắt điện thoại.
+    //     Có chức năng xạc pin điện thoại.
+    //     Có chức năng soạn tin nhắn.
+    //     Có chức năng nhận tin nhắn từ một chiếc mobile khác.
+    //     Có chức năng gửi tin nhắn tới một chiếc mobile khác.
+    //     Có chức năng xem tin trong hộp thư đến.
+    //     Có chức năng xem tin đã gửi.
+    //     Sau mỗi lần sử dụng một chức năng, năng lượng pin sẽ giảm đi một đơn vị.
+    //     Các chức năng không thể hoạt động nếu điện thoại chưa bật.
+    class Mobile {
+        constructor(battery, statusMobile, nameMobile) {
+            this.battery = battery;
+            this.statusMobile = statusMobile;
+            this.nameMobile = nameMobile;
+            this.smsSoanThao = [];
+            this.smsThuDen = [];
+            this.smsThuDaGui = [];
+        }
+
+        checkStatus() { //chức năng kiểm tra trạng thái điện thoại bật hay tắt
+            if (this.statusMobile) {
+                return true;
+            } else {
+                alert("Điện thoại đang tắt. Vui lòng bật điện thoại");
+                return false;
+            }
+        }
+
+        onOrOffMoble() {//chức năng bật tắt điện thoại
+            if (this.checkStatus()) {
+                this.statusMobile = false;
+            } else {
+                chargMobile();
+                this.statusMobile = true;
+            }
+            this.battery--;
+
+        }
+
+        chargMobile() {//chức năng sạc pin
+            if (this.battery < 5) {
+                alert("Pin yếu, vui lòng cắm sạc!");
+                while (this.battery <= 100) {
+                    this.battery = this.battery + 1;
+                }
+            }
+        }
+
+        soanSms() {//chức năng soạn tin nhắn
+            if (this.checkStatus()) { //kiểm tra điện thoại bật hay tắt
+                this.chargMobile();  //kiểm tra điện thoại có trên 5% pin hay không
+                let sms = prompt("Nhập nội dung tin nhắn: ");
+                this.smsSoanThao.push(sms);
+                this.battery--;
+            }
+        }
+
+        guiSms() {//chức năng gửi tin nhắn
+            if (this.checkStatus()) {//kiểm tra điện thoại bật hay tắt
+                this.chargMobile();  //kiểm tra điện thoại có trên 5% pin hay không
+                if (this.smsSoanThao.length === 0) {
+                    this.soanSms();
+                    // tin nhắn được gửi đi theo format là người gửi: tên người gửi. Nội dung tin nhắn.
+                    // tin nhắn sẽ được push vào vùng nhớ hộp thư đến của điện thoại muốn gửi tin nhắn.
+                    mobile.smsThuDen.push("Người gửi: " + this.name + ". " + this.smsSoanThao[0]);
+                    // tin nhắn được gửi sẽ được push vào vùng tin nhắn đã gửi của điện thoại gửi tin nhắn.
+                    this.smsDaGui.push(this.smsSoanThao[0]);
+                    //Sau đó xóa tin nhắn đã gửi ở vùng tin nhắn soạn thảo
+                    this.smsSoanThao.splice(0, 1);
+                } else {
+                    //tương tự như trên nhưng trước khi gửi sẽ cho phép người dùng lựa chọn tin nhắn ở vùng nhớ đang soạn thảo để gửi đi
+                    let temp = "";
+                    for (let i = 0; i < this.smsSoanThao.length; i++) {
+                        temp += i + ": " + this.smsSoanThao[i] + "\n";
+                    }
+                    let index = parseInt(prompt(temp + "\n" + "Chọn tin nhắn đã soạn để gửi!"));
+                    mobile.smsThuDen.push("Người gửi: " + this.name + ". " + this.smsSoanThao[index]);
+                    this.smsDaGui.push(this.smsSoanThao[index]);
+                    this.smsSoanThao.splice(index, 1);
+                }
+                this.battery--;
+            }
+        }
+
+        xemSms() {
+            if (this.checkStatus()) {//kiểm tra điện thoại bật hay tắt
+                let temp = [];
+                let tempSms = "";
+                this.chargMobile();  //kiểm tra điện thoại có trên 5% pin hay không
+                // hiển thị ra danh sách số mobile đã gửi tin nhắn đến điện thoại này?
+                // Cho vòng lặp đầu tiên để duyệt tất cả các phần tử có trong vùng nhớ hộp thư đến
+                for (let i = 0; i < this.smsThuDen.length; i++) {
+                    let check = false;
+                    //Vòng lặp thứ 2 sẽ duyệt chuỗi tin nhắn trong hộp thư đến
+                    for (let j = 0; j < this.smsThuDen[i].length; j++) {
+                        // Nếu nó gặp được kí tự : thì sẽ chạy các câu lệnh ở trong if
+                        if (this.smsThuDen[i].charAt(j) === ":") {
+                            let tempNguoiGui = "";
+                            // Cho vòng lặp thứ 3 từ phần tử sau kí tự : để lấy ra được cái tên điện thoại gửi sms đến.
+                            for (let k = j + 1; k < this.smsThuDen[i].length; k++) {
+                                // Nếu nó gặp được kí tự . thì sẽ chạy các câu lệnh ở trong if
+                                if (this.smsThuDen[i].charAt(k) === ".") {
+                                    //push tên người gửi vào mảng temp
+                                    temp.push(tempNguoiGui);
+                                    check = true;
+                                    break;
+                                } else {
+                                    // nếu ko thỏa if thì ta sẽ cộng thêm vào chuỗi temNguoiGui
+                                    tempNguoiGui += this.smsThuDen[i].charAt(k);
+                                }
+                            }
+                            // Kiểm tra biến check có biến true. Nếu như là true thì break vòng lặp 2 để kiểm tra tin nhắn tiếp theo trong vùng nhớ hộp thư đến
+                            if (check) {
+                                break;
+                            }
+                        }
+                    }
+                }
+                // Hiển thị danh sách các tin nhắn được gửi tới từ điện thoại nào?
+                for (let i = 0; i < temp.length; i++) {
+                    tempSms += i + ": " + temp[i] + "\n";
+                }
+                //Cho phép người dùng chọn tin nhắn muốn xem trong vùng nhớ hộp thư đến
+                let index = parseInt(prompt(tempSms+"\nChọn tin nhắn mà bạn muốn xem: "));
+                alert(this.smsThuDen[index]);
+                this.pin--;
+            }
+        }
+    }
+    let nokia = new Mobile(100,true,"nokia");
+    let iphone = new Mobile(10,true,"iphone");
+    nokia.guiSms(iphone);
+    iphone.xemSms();
+</script>
+</body>
+</html>
