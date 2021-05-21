@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500px" height="300px" style="border:1px solid #d3d3d3;"></canvas>
+    <p id="hienThi"></p>
+    <script>
+        //    Rectangle
+        class Rectangle { //hàm khởi tạo class
+
+            constructor(length, width) {
+                this.length = length;
+                this.width = width;
+            }
+
+            getLength() {
+                return this.length;
+            }
+
+            setLength(newLength) {
+                this.length = newLength;
+            }
+
+            getWidth() {
+                return this.width;
+            }
+
+            setWidth(newWidth) {
+                this.width = newWidth;
+            }
+
+            getArea() {
+                return this.length * this.width;
+            }
+
+            getPerimeter() {
+                return (this.length + this.width) * 2;
+            }
+
+            show() {
+                var c = document.getElementById("myCanvas");
+                let myCanvas = c.getContext("2d");
+                myCanvas.fillStyle = "#FF0000";
+                myCanvas.fillRect(50, 50, this.length, this.width);
+            }
+        }
+
+        // + Có tính năng hiển thị trực quan hình chữ nhật bằng cách vẽ lên canvas
+        // Sử dụng lớp Rectangle vừa định nghĩa để viết một chương trình JavaScript  với kịch bản như sau:
+        // Khai báo và khởi tạo một đối tượng kiểu Rectangle.
+        // Hiển thị hình chữ nhật trên màn hình web
+        // Thay đổi chiều dài và chiều rộng của hình chữ nhật.
+        //   In ra màn hình diện tích và chu vi của hình chữ nhật đó.
+
+        var newRectangle = new Rectangle(100, 80);
+        document.getElementById('hienThi').innerHTML = "Area: " + newRectangle.getArea() + "; Perimeter: " + newRectangle.getPerimeter();
+        newRectangle.setLength(200);
+        newRectangle.setWidth(100);
+        document.getElementById('hienThi').innerHTML = "Area: " + newRectangle.getArea() + "; Perimeter: " + newRectangle.getPerimeter();
+        newRectangle.show();
+    </script>
+</body>
+</html>
