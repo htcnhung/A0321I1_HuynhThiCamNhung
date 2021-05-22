@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    //Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b.
+    // Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên.
+    // Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.
+    let a = parseInt(prompt("Nhập số lượng số bạn muốn nhập ở mảng 1: "));
+    let arr1 = [];
+    for (let i = 1; i <= a; i++) {
+        let num1 = parseInt(prompt("Nhập số thứ " + i));
+        arr1.push(num1);
+    }
+    let b = parseInt(prompt("Nhập số lượng số bạn muốn nhập ở mảng 2: "));
+    let arr2 = [];
+    for (let j = 1; j <= b; j++) {
+        let num2 = parseInt(prompt("Nhập số thứ " + j));
+        arr2.push(num2);
+    }
+    let c = parseInt(prompt("Nhập số lượng số bạn muốn nhập ở mảng 3: "));
+    let arr3 = [];
+    for (let k = 1; k <= c; k++) {
+        let num3 = parseInt(prompt("Nhập số thứ " + k));
+        arr3.push(num3);
+    }
+    arr3 = arr1.concat(arr2);
+</script>
+</body>
+</html>

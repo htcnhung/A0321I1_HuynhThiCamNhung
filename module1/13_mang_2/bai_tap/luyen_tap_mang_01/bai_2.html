@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    // Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+    // Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+    let arr = [];
+    for (let i = 1; i <= 10; i++){
+        let num = parseInt(prompt("Nhập vào số thứ : " + i));
+        arr.push(num);
+    }
+    let max = arr[0];
+    for ( let j = 0; j < arr.length; j++){
+        if (max < arr[j]) {
+            max = arr[j];
+        }
+    }
+    alert("Số lớn nhất là " + max + "\n" + "Nằm ở vị trí thứ " + arr.indexOf(max));
+</script>
+</body>
+</html>
