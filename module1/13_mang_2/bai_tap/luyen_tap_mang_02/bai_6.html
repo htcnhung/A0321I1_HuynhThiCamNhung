@@ -8,7 +8,8 @@
 <script>
     //Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )
     let str = prompt("Nhập chuỗi ký tự vào đây");
-    let charArr = str.split("");
+   //CÁCH 1
+     let charArr = str.split("");
     let count = 0;
     for (let i = 0; i < charArr.length; i++) {
         if (charArr[i] === "-") {
@@ -22,6 +23,10 @@
     } else {
         document.write(charArr.join(""));
     }
+
+    //CÁCH 2
+    // let strReplace = str.replace("-","_");
+    // alert(strReplace);
 </script>
 </body>
 </html>
