@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    //Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,  in ra các phần tử trong mảng.
+    // Chú ý: Sử dụng vòng lặp for lồng nhau
+    let n = parseInt(prompt("Nhập số lượng phần tử trong mảng 2 chiều!"));
+    let m = parseInt(prompt("Nhập số lượng phần tử trong mảng con "));
+    let array = [];
+    for (let x = 0; x < n; x++) {
+        array[x] = [];
+        for (let y = 0; y < m; y++) {
+            array[x][y] = parseInt(prompt("Nhập phần tử con Array[" + x + "][" + y + "] trong mảng con"));
+        }
+    }
+    console.log(array);
+    for (let x = 0; x<n; x++){
+        document.write("row " + x + "<br/>");
+        for (let y = 0; y<m; y++){
+            document.write(' "' + array[x][y] + '"' +"<br/>");
+        }
+    }
+</script>
+</body>
+</html>

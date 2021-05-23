@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    //Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.
+    let string1 = prompt("Enter your string 1");
+    let string2 = prompt("Enter your string 2");
+    let charArr1 = string1.split("");
+    let charArr2 = string2.split("");
+    let check = true;
+    if (charArr1.length === charArr2.length) {
+        for (let i = 0; i < charArr1.length; i++) {
+            if (charArr1[i] !== charArr2[i]) {
+                check = false;
+                break;
+            }
+        }
+    } else {
+        alert("Hai chuỗi bạn vừa nhập không giống nhau");
+    }
+    if (!check) {
+        alert("Hai chuỗi bạn vừa nhập không giống nhau");
+    } else {
+        alert("Hai chuỗi bạn vừa nhập giống nhau")
+    }
+
+</script>
+</body>
+</html>

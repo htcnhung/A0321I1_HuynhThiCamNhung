@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    //Viết một chương trình để đếm số từ trong một chuỗi
+    let strings = prompt("Enter your strings: ");
+    //CÁCH 1: DÙNG METHOD SPLIT
+    let charArr = strings.split("");
+    console.log(charArr);
+    let count = 0;
+    for (let i = 0; i < charArr.length; i++) {
+        if (!isNaN(charArr[i])) {
+            count++;
+        }
+    }
+    document.write("Có " + count + " ký tự số trong chuỗi vừa nhập.");
+
+    //CÁCH 2: DÙNG VÒNG LẶP FOR ĐỂ DUYỆT TỪNG KÝ TỰ VÀO MẢNG
+    //for (let i = 0; i < str.length; i++) {
+    //charArr.push(str.charAt(i)); Phương thức charAt() dùng để trả về ký tự tại một vị trí được xác định trong chuỗi.
+    //}
+
+
+</script>
+</body>
+</html>
