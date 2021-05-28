@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let m = parseInt(prompt("Số lượng phân số bạn muốn nhập là: "));
+    let numerators = [];
+    let denominators = [];
+    for (let i = 0; i < m; i++) {
+        let a = parseInt(prompt("Nhập tử số của phân số thứ " + (i + 1)));
+        let b = parseInt(prompt("Nhập mẫu số của phân số thứ " + (i + 1)));
+        numerators.push(a);
+        denominators.push(b);
+    }
+    console.log(numerators);
+    console.log(denominators);
+    let max = numerators[0] / denominators[0];
+    let index;
+    console.log(max);
+    for (let j = 0; j < m; j++) {
+        if (numerators[j] / denominators[j] > max) {
+            max = numerators[j] / denominators[j];
+            index = j;
+        }
+    }
+    document.write(numerators[index] + "/" + denominators[index] + " là phân số lớn nhất; có chỉ số là: " + index);
+
+</script>
+</body>
+</html>

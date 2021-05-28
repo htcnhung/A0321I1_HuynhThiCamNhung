@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<h3>MENU ĐỒ UỐNG</h3>
+<label><input type="button" id="1" value="01" onclick="cafe()"> Cafe</label> <br/> <br/>
+<label><input type="button" id="2" value="02" onclick="camVat()"> Cam vắt</label> <br/> <br/>
+<label><input type="button" id="3" value="03" onclick="caRot()"> Nước ép cà rốt</label> <br/> <br/>
+<label><input type="button" id="4" value="04" onclick="caChua()"> Nước ép cà chua</label> <br/> <br/>
+<label><input type="button" id="5" value="05" onclick="nuocLoc()"> Nước lọc</label> <br/> <br/>
+<label><input type="button" id="6" value="06" onclick="nuocDua()"> Nước dừa</label> <br/> <br/>
+<label><input type="button" id="7" value="07" onclick="thoat()"> Thoát gọi món</label> <br/> <br/>
+<p id="orderBill1"></p>
+<p id="orderBill2"></p>
+<p id="orderBill3"></p>
+<p id="orderBill4"></p>
+<p id="orderBill5"></p>
+<p id="orderBill6"></p>
+<p id="hienThi" style="color: darkolivegreen"></p>
+<script>
+    //Khi người dùng lựa chọn 1 trong số các thức uống,
+    // chương trình sẽ hiện đơn giá của thức uống đó và cho phép người dùng nhập số lượng.
+    // Cuối cùng hiển thị tổng số tiền người dùng cần phải trả.
+    //Sử dụng vòng lặp do while lặp lại cho người dùng đặt thức uống,
+    // kết thúc quá trình đặt thức uống khi người nhấn số 7
+    let cost = [15000, 20000, 20000, 18000, 10000, 22000];
+    console.log(cost);
+    let sumCaFe = 0;
+    let sumCamVat = 0;
+    let sumCaRot = 0;
+    let sumCaChua = 0;
+    let sumNuocLoc = 0;
+    let sumnuocDua = 0;
+    let bill = [];
+    let sumBill;
+    let check = true;
+
+    function cafe() {
+        alert("Cà phê: 15,000 VND");
+        let sLCaPhe = parseInt(prompt("Nhập số lượng cà phê: "));
+        sumCaFe = sLCaPhe * 15000;
+        bill.push("Cà phê");
+        bill.push(sLCaPhe);
+        document.getElementById("orderBill1").innerHTML = "Cà phê   x " + sLCaPhe + " = " + sumCaFe + " VND";
+        check = true;
+    }
+
+    function camVat() {
+        alert("Nước cam vắt: 20,000 VND");
+        let sLCamVat = parseInt(prompt("Nhập số lượng nước cam vắt: "));
+        sumCamVat = sLCamVat * 20000;
+        document.getElementById("orderBill2").innerHTML = "Nước cam vắt   x " + sLCamVat + " = " + sumCamVat + " VND";
+        check = true;
+    }
+
+    function caRot() {
+        alert("Nước ép cà rốt: 20,000 VND");
+        let sLCaRot = parseInt(prompt("Nhập số lượng nước ép cà rốt "));
+        sumCaRot = sLCaRot * 20000;
+        document.getElementById("orderBill3").innerHTML = "Nước ép cà rốt   x " + sLCaRot + " = " + sumCaRot + " VND";
+        check = true;
+    }
+
+    function caChua() {
+        alert("Nước ép cà chua: 18,000 VND");
+        let sLCaChua = parseInt(prompt("Nhập số lượng nước ép cà chua: "));
+        sumCaChua = sLCaChua * 18000;
+        document.getElementById("orderBill4").innerHTML = "Nước ép cà chua   x " + sLCaChua + " = " + sumCaChua + " VND";
+        check = true;
+    }
+
+    function nuocLoc() {
+        alert("Nước lọc: 18,000 VND");
+        let sLNuocLoc = parseInt(prompt("Nhập số lượng nước lọc: "));
+        sumNuocLoc = sLNuocLoc * 10000;
+        document.getElementById("orderBill5").innerHTML = "Nước lọc   x " + sLNuocLoc + " = " + sumNuocLoc + " VND";
+        check = true;
+    }
+
+    function nuocDua() {
+        alert("Nước dừa: 22,000 VND");
+        let sLNuocDua = parseInt(prompt("Nhập số lượng nước dừa: "));
+        sumnuocDua = sLNuocDua * 22000;
+        document.getElementById("orderBill6").innerHTML = "Nước dừa   x " + sLNuocDua + " = " + sumnuocDua + " VND";
+        check = true;
+    }
+
+    function thoat() {
+        sumBill = sumCaFe + sumCamVat + sumCaRot + sumCaChua + sumNuocLoc + sumnuocDua;
+        document.getElementById("hienThi").innerHTML = "Tổng bill của bạn là: " + sumBill + " VND";
+    }
+    //Hỏi lại thầy vì sao cần dùng vòng lặp do-while
+
+</script>
+
+</body>
+</html>

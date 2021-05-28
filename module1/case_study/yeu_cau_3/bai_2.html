@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<label> Nhập vào số lượng số nguyên trong mảng a
+    <input type="number" id="soLuongA" placeholder="enter a number"/>
+</label>
+<br/>
+<br/>
+<label> Nhập vào số lượng số nguyên trong mảng b
+    <input type="number" id="soLuongB" placeholder="enter a number"/>
+</label>
+<input type="button" value="Run" onclick="check()"/>
+<script>
+    let a = [];
+    let b = [];
+    let c = [];
+
+    function check() {
+        let m = parseInt(document.getElementById("soLuongA").value);
+        let n = parseInt(document.getElementById("soLuongB").value);
+        if (m>n){
+        }
+        for (let i = 0; i < m; i++) {
+            let number1 = parseInt(prompt("Nhập số nguyên thứ " + (i + 1) + " của mảng a"));
+            a.push(number1);
+        }
+        console.log(a);
+        for (let j = 0; j < n; j++) {
+            let number2 = parseInt(prompt("Nhập số nguyên thứ " + (j + 1) + " của mảng b"));
+            b.push(number2);
+        }
+        console.log(b);
+        if (m > n) {
+            for (let x = 0; x < m; x++) {
+                for (let y = 0; y < n; y++) {
+                    if (a[x] !== b[y]) {
+                        c.push(a[x]);
+                    }
+                }
+            }
+        } else {
+            for (let x = 0; x < m; x++) {
+                for (let y = 0; y < n; y++) {
+                    if (a[x] !== b[y]) {
+                        c.push(b[y]);
+                    }
+                }
+            }
+        }
+        document.write(c);
+    }
+
+
+</script>
+</body>
+</html>

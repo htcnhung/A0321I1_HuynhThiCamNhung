@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    //Viết một chương trình nhập một số từ bàn phím và in ra màn hình bằng chữ.
+    // Ví dụ 1234, kết quả in ra màn hình là một hai ba bốn.
+    let number = prompt("Nhập một số bất kỳ: ");
+    let array = number.split("");
+    console.log(array);
+    for (let i = 0; i < array.length; i++) {
+        switch (array[i]) {
+            case "0" : {
+                document.write("không ");
+                break;
+            }
+            case "1" : {
+                document.write("một ");
+                break;
+            }
+            case "2" : {
+                document.write("hai ");
+                break;
+            }
+            case "3" : {
+                document.write("ba ");
+                break;
+            }
+            case "4" : {
+                document.write("bốn ");
+                break;
+            }
+            case "5" : {
+                document.write("năm ");
+                break;
+            }
+            case "6" : {
+                document.write("sáu ");
+                break;
+            }
+            case "7" : {
+                document.write("bảy ");
+                break;
+            }
+            case "8" : {
+                document.write("tám ");
+                break;
+            }
+            case "9" : {
+                document.write("chín ");
+                break;
+            }
+
+        }
+    }
+
+
+</script>
+</body>
+</html>

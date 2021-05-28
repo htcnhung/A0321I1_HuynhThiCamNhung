@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<label> Nhập vào số lượng số nguyên trong mảng a
+    <input type="number" id="soLuong" placeholder="enter a number"/>
+    <input type="button" value="Run" onclick="check()"/>
+</label>
+<script>
+    let a = [];
+    let b = [];
+    let count = 0;
+    function check() {
+       let n = parseInt(document.getElementById("soLuong").value);
+       for (let i = 0; i < n; i++) {
+           let number = parseInt(prompt("Nhập số nguyên thứ " + (i + 1)));
+           a.push(number);
+           count += number;
+           b.push(count);
+       }
+       document.write(b);
+   }
+</script>
+</body>
+</html>
