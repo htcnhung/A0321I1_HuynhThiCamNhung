@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<h3>Chuẩn hóa xâu ký tự</h3>
+<label>Nhập xâu ký tự:
+    <input id="string" type="text"/>
+</label>
+<br/>
+<br/>
+<label style="color: red">
+    Hàm chuẩn hóa xâu ký tự:
+    <button onclick="titleCase()">Run</button>
+</label>
+<p style="color: saddlebrown" id="display1"><b></b></p>
+<label style="color: red">
+    Hàm tìm từ dài nhất trong xâu ký tự:
+    <button onclick="check()">Run</button>
+</label>
+<p style="color:saddlebrown " id="display2"><b></b></p>
+<script>
+    //Viết một hàm chuẩn hóa xâu ký tự: biến đổi xâu ký tự thành xâu sao cho trong xâu không có 2 dấu cách liền nhau
+    // và bắt đầu mỗi từ phải in hoa. Ví dụ tRuong    TaN   HAI => Truong Tan Hai.
+    //Và một hàm tìm từ dài nhất trong 1 xâu ký tự.
+    // Hàm main sử dụng các hàm này để nhập xâu ký tự từ bàn phím, in ra xâu trước và sau khi chuẩn hóa,
+    // 1 từ dài nhất trong xâu đó.
+    //
+    function titleCase() {
+        let str = document.getElementById("string").value;
+        str = str.toLowerCase().replace('  ', ' ');
+        var splitStr = str.split(' ');
+        for (let i = 0; i < splitStr.length; i++) {
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+        }
+        document.getElementById("display1").innerHTML = "Kết quả: " + splitStr.join(" ");
+    }
+
+    function check() {
+        let str = document.getElementById("string").value;
+        var splitStr = str.toLowerCase().replace('  ', ' ').split(' ');
+        var longest = 0;
+        var word = [];
+        for (let i = 0; i < splitStr.length; i++) {
+            splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+            if (longest <= splitStr[i].length) {
+                longest = splitStr[i].length;
+                word.push(splitStr[i]);
+            }
+        }
+        console.log(word);
+        document.getElementById("display2").innerHTML = "Kết quả: " + "<br>" + "Chuỗi ký tự trước khi chuẩn hóa: " + str + "<br/>" +
+            "Chuỗi ký tự sau khi chuẩn hóa: " + splitStr.join(" ") + "<br/>" + "Từ dài nhất trong xâu là: " + word;
+    }
+
+
+    //var re = /[^A-Za-z0-9]/g; tham khảo thêm regex
+    // str = text.replace(/(^\w{1})|(\s{1}\w{1})/g, match => match.toUpperCase());
+
+</script>
+</body>
+</html>

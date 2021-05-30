@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Cho xâu kí tự. Hãy đếm số lượng kí tự khác nhau trong xâu đó
+    //Ví dụ: s = "cabca", thì kết quả differentSymbolsNaive(s) = 3.
+    // ⇨	Có 3 kí tự khác nhau là a, b và c.
+    var str = prompt("Nhập xâu ký tự ");
+    let array = str.split("").sort();
+    //console.log(array);
+    let differentSymbols = [];
+    let x = array[0];
+    differentSymbols.push(x);
+    for (let i = 0; i < array.length - 1; i++) {
+        if (x === array[i + 1]) {
+            x = array[i + 1];
+        } else {
+            differentSymbols.push(array[i + 1]);
+            x = array[i + 1];
+        }
+    }
+    document.write("Có " + differentSymbols.length + " ký tự khác nhau trong xâu ký tự bạn vừa nhập; đó là: " + differentSymbols);
+
+
+</script>
+</body>
+</html>
