@@ -7,6 +7,52 @@
 <body>
 <script>
     //Bài 2: Viết hàm liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố có trong mảng đó.
+    //Hàm khởi tạo mảng 2 chiều
+    function taoMangHaiChieu() {
+        let n = parseInt(prompt("Nhập số lượng phần tử trong mảng 2 chiều!"));
+        let m = parseInt(prompt("Nhập số lượng phần tử trong mảng con "));
+        let array = [];
+        for (let x = 0; x < n; x++) {
+            array[x] = [];
+            for (let y = 0; y < m; y++) {
+                array[x][y] = parseInt(prompt("Nhập phần tử con Array[" + x + "][" + y + "] trong mảng con"));
+            }
+        }
+        checkSoNguyenTo(array); //Hàm check số nguyên tố
+        DemSoLuongSNT(array, n, m); //Hàm đếm SL số nguyên tố và hiển thị
+    }
+    //Hàm check số nguyên tố
+    function checkSoNguyenTo(x) {
+        let check;
+        if (x < 2) {
+            check = false;
+        } else {
+            for (let i = 2; i < Math.sqrt(x); i++) {
+                if (x % i === 0) {
+                    check = false;
+                }
+            }
+        }
+        check = true;
+    }
+
+    //Hàm đếm và liệt kê số nguyên tố
+    function DemSoLuongSNT(a, b, c) {
+        let count = 0;
+        for (let i = 0; i < b; i++) {
+            for (let j = 0; j < c; j++) {
+                if (checkSoNguyenTo(a[i][j])) {
+                    count++;
+                    console.log(count);
+                    document.write("Có " + count + " số nguyên tố, đó là: " + a[i][j]);
+                }
+            }
+        }
+    }
+
+    taoMangHaiChieu();
+//Check lại hoặc hỏi thầy, chạy chưa ra kq
+
 </script>
 </body>
 </html>
