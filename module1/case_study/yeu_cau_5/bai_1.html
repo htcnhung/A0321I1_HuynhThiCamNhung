@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    //Bài 1: Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.
+
+    function TongCacSoChan() {
+        let n = parseInt(prompt("Nhập số lượng phần tử trong mảng 2 chiều!"));
+        let m = parseInt(prompt("Nhập số lượng phần tử trong mảng con "));
+        let array = [];
+        for (let x = 0; x < n; x++) {
+            array[x] = [];
+            for (let y = 0; y < m; y++) {
+                array[x][y] = parseInt(prompt("Nhập phần tử con Array[" + x + "][" + y + "] trong mảng con"));
+            }
+        }
+        let sum = 0;
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < m; j++) {
+                if (array[i][j] % 2 === 0) {
+                    sum += array[i][j];
+                }
+            }
+        }
+        console.log(sum);
+
+    }
+    TongCacSoChan();
+
+</script>
+</body>
+</html>
