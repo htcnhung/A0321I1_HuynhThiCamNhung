@@ -7,6 +7,30 @@
 <body>
 <script>
     //Bài 3: Viết hàm tìm giá trị lớn nhất, nhỏ nhất trong mảng 2 chiều
+    function timGiaTriLonNhat() {
+        //Khởi tạo mảng 2 chiều
+        let n = parseInt(prompt("Nhập số lượng phần tử trong mảng 2 chiều!"));
+        let m = parseInt(prompt("Nhập số lượng phần tử trong mảng con "));
+        let array = [];
+        for (let x = 0; x < n; x++) {
+            array[x] = [];
+            for (let y = 0; y < m; y++) {
+                array[x][y] = parseInt(prompt("Nhập phần tử con Array[" + x + "][" + y + "] trong mảng con"));
+            }
+        }
+        //Tìm giá trị lớn nhất
+        let max = array[0][0];
+        for (let i = 0; i < n; i++) {
+            for (let j = 0; j < m; j++) {
+                if (array[i][j] > max)
+                    max = array[i][j];
+            }
+        }
+        document.write("Giá trị lớn nhất trong mảng 2 chiều là: " + max);
+    }
+    timGiaTriLonNhat();
+
+
 </script>
 </body>
 </html>
