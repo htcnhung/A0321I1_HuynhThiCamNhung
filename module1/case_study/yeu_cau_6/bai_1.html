@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<h3>Xổ số Codegym</h3>
+<p id="display1"></p>
+<p id="display2"></p>
+<p id="display3"></p>
+<p id="display4"></p>
+<p id="display5"></p>
+<p id="display6"></p>
+<input type="button" value="Mua Vé" onclick="chonSo()">
+<input type="button" value="Xem Kết Quả" onclick="ketqua()">
+<script>
+    class Xoso {
+        constructor(so1, so2, so3, so4, so5, so6) {
+            this.so1 = so1;
+            this.so2 = so2;
+            this.so3 = so3;
+            this.so4 = so4;
+            this.so5 = so5;
+            this.so6 = so6;
+
+        }
+
+        getSo1() {
+            return this.so1;
+        }
+
+        getSo2() {
+            return this.so2;
+        }
+
+        getSo3() {
+            return this.so3;
+        }
+
+        getSo4() {
+            return this.so4;
+        }
+
+        getSo5() {
+            return this.so5;
+        }
+
+        getSo6() {
+            return this.so6;
+        }
+
+        setSo1(so1) {
+            this.so1 = so1;
+        }
+
+        setSo2(so2) {
+            this.so2 = so2;
+        }
+
+        setSo3(so3) {
+            this.so3 = so3;
+        }
+
+        setSo4(so4) {
+            this.so4 = so4;
+        }
+
+        setSo5(so5) {
+            this.so5 = so5;
+        }
+
+        setSo6(so6) {
+            this.so6 = so6;
+        }
+    }
+
+    let yourTicket = new Xoso();
+    let winResult = [];
+    for (let i = 0; i < 6; i++) {
+        let x = Math.floor(Math.random() * 100);
+        winResult.push(x);
+    }
+
+  //  Trường hợp ban tổ chức biết trước kết quả:
+  //let winResult = ["3", "3", "3", "3", "3", "3"];
+
+    let check = true;
+    let count = 0;
+
+    function chonSo() {
+        let yourNumber = parseInt(prompt("Mời bạn lựa chọn cách mua: "+
+            '\nNhập "1": Hệ thống tự random ' + '\nNhập "2" bạn tự chọn số'));
+        switch (yourNumber) {
+            case 1 : {
+                let num1 = Math.floor(Math.random() * 100);
+                let danhSach1 = '<input type="button" id="no1" value="' + num1 + '"/>';
+                document.getElementById("display1").innerHTML = danhSach1;
+
+                let num2 = Math.floor(Math.random() * 100);
+                let danhSach2 = '<input type="button" id="no2" value="' + num2 + '"/>';
+                document.getElementById("display2").innerHTML = danhSach2;
+
+                let num3 = Math.floor(Math.random() * 100);
+                let danhSach3 = '<input type="button" id="no3" value="' + num3 + '"/>';
+                document.getElementById("display3").innerHTML = danhSach3;
+
+                let num4 = Math.floor(Math.random() * 100);
+                let danhSach4 = '<input type="button" id="no4" value="' + num4 + '"/>';
+                document.getElementById("display4").innerHTML = danhSach4;
+
+                let num5 = Math.floor(Math.random() * 100);
+                let danhSach5 = '<input type="button" id="no5" value="' + num5 + '"/>';
+                document.getElementById("display5").innerHTML = danhSach5;
+
+                let num6 = Math.floor(Math.random() * 100);
+                let danhSach6 = '<input type="button" id="no6" value="' + num6 + '"/>';
+                document.getElementById("display6").innerHTML = danhSach6;
+
+                break;
+            }
+            case 2: {
+                let list1 = '<select name="Chọn số" id="no1">\n';
+                for (let i = 0; i <= 99; i++) {
+                    list1 +=
+                        '<option value="' + i + '">' + i + '</option>}\n'
+                }
+                list1 += '</select>';
+                document.getElementById("display1").innerHTML = list1;
+
+                let list2 = '<select name="Chọn số" id="no2">\n';
+                for (let i = 0; i <= 99; i++) {
+                    list2 +=
+                        '<option value="' + i + '">' + i + '</option>}\n'
+                }
+                list2 += '</select>';
+                document.getElementById("display2").innerHTML = list2;
+
+                let list3 = '<select name="Chọn số" id="no3">\n';
+                for (let i = 0; i <= 99; i++) {
+                    list3 +=
+                        '<option value="' + i + '">' + i + '</option>}\n'
+                }
+                list3 += '</select>';
+                document.getElementById("display3").innerHTML = list3;
+
+                let list4 = '<select name="Chọn số" id="no4">\n';
+                for (let i = 0; i <= 99; i++) {
+                    list4 +=
+                        '<option value="' + i + '">' + i + '</option>}\n'
+                }
+                list4 += '</select>';
+                document.getElementById("display4").innerHTML = list4;
+
+                let list5 = '<select name="Chọn số" id="no5">\n';
+                for (let i = 0; i <= 99; i++) {
+                    list5 +=
+                        '<option value="' + i + '">' + i + '</option>}\n'
+                }
+                list5 += '</select>';
+                document.getElementById("display5").innerHTML = list5;
+
+                let list6 = '<select name="Chọn số" id="no6">\n';
+                for (let i = 0; i <= 99; i++) {
+                    list6 +=
+                        '<option value="' + i + '">' + i + '</option>}\n'
+                }
+                list6 += '</select>';
+                document.getElementById("display6").innerHTML = list6;
+
+                break;
+            }
+        }
+
+    }
+
+    function ketqua() {
+        count++;
+        console.log(count);
+        if (count > 4) {
+            alert("Bạn đã vượt quá số lần mua quy định (4) trong ngày!");
+        }
+        if (check) {
+            let a = document.getElementById("no1").value;
+            let b = document.getElementById("no2").value;
+            let c = document.getElementById("no3").value;
+            let d = document.getElementById("no4").value;
+            let e = document.getElementById("no5").value;
+            let f = document.getElementById("no6").value;
+
+            yourTicket.setSo1(a);
+            yourTicket.setSo2(b);
+            yourTicket.setSo3(c);
+            yourTicket.setSo4(d);
+            yourTicket.setSo5(e);
+            yourTicket.setSo6(f);
+
+            if (yourTicket.getSo1() === winResult[0] && yourTicket.getSo2() === winResult[1] && yourTicket.getSo3() === winResult[2]
+                && yourTicket.getSo4() === winResult[3] && yourTicket.getSo5() === winResult[4] && yourTicket.getSo6() === winResult[5]) {
+                alert("Chúc mừng bạn đã trúng giải nhất Xổ số Codegym, phần thưởng của bạn là 10 tỷ VND ");
+            } else {
+                if (yourTicket.getSo2() === winResult[1] && yourTicket.getSo3() === winResult[2]
+                    && yourTicket.getSo4() === winResult[3] && yourTicket.getSo5() === winResult[4] && yourTicket.getSo6() === winResult[5]) {
+                    alert("Chúc mừng bạn đã trúng giải nhì Xổ số Codegym, phần thưởng của bạn là 1 tỷ VND ");
+                }
+                if (yourTicket.getSo4() === winResult[3] && yourTicket.getSo5() === winResult[4] && yourTicket.getSo6() === winResult[5]) {
+                    alert("Chúc mừng bạn đã trúng giải nhì Xổ số Codegym, phần thưởng của bạn là 100 triệu VND ");
+                } else {
+                    alert("Chúc bạn may mắn lần sau");
+                }
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
