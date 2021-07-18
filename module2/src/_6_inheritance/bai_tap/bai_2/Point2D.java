@@ -3,8 +3,8 @@ package _6_inheritance.bai_tap.bai_2;
 import java.util.Arrays;
 
 public class Point2D {
-    private float x;
-    private float y;
+    private float x = 0.0f;
+    private float y = 0.0f;
 
     public Point2D(float x, float y) {
         this.x = x;
@@ -12,8 +12,6 @@ public class Point2D {
     }
 
     public Point2D() {
-        this.x = 0.0f;
-        this.y = 0.0f;
     }
 
     public float getX() {

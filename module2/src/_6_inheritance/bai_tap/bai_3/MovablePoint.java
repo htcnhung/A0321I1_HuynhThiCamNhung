@@ -28,6 +28,7 @@ public class MovablePoint extends Point {
         this.xSpeed = xSpeed;
     }
 
+
     public float getySpeed() {
         return ySpeed;
     }
@@ -36,16 +37,13 @@ public class MovablePoint extends Point {
         this.ySpeed = ySpeed;
     }
 
-    public void setSpeed(float xSpeed, float ySpeed){
-        setxSpeed(xSpeed);
-        setySpeed(ySpeed);
+    public void setSpeed(float xSpeed, float ySpeed) {
+        this.xSpeed = xSpeed;
+        this.ySpeed = ySpeed;
     }
 
-    public float[] getSpeed(){
-        float[] arr = new float[2];
-        arr[0] = xSpeed;
-        arr[1] = ySpeed;
-        return arr;
+    public float[] getSpeed() {
+        return super.getXY();
     }
 
     @Override
@@ -56,7 +54,7 @@ public class MovablePoint extends Point {
                 '}';
     }
 
-    public MovablePoint move(){
+    public MovablePoint move() {
         super.setX(super.getX() + xSpeed);
         super.setY(super.getY() + ySpeed);
         return this;

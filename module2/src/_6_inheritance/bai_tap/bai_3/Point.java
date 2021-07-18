@@ -3,13 +3,10 @@ package _6_inheritance.bai_tap.bai_3;
 import java.util.Arrays;
 
 public class Point {
-    private float x;
-    private float y;
-    private float[] arr = new float[2];
+    private float x = 0.0f;
+    private float y = 0.0f;
 
     public Point() {
-        this.x = 0.0f;
-        this.y = 0.0f;
     }
 
     public Point(float x, float y) {
@@ -34,14 +31,15 @@ public class Point {
     }
 
     public float[] getXY(){
+        float[] arr = new float[2];
         arr[0] = x;
         arr[1] = y;
         return arr;
     }
 
     public void setXY(float x, float y){
-        arr[0] = x;
-        arr[1] = y;
+       this.x = x;
+       this.y = y;
     }
 
     @Override
