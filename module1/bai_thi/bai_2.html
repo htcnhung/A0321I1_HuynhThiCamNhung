@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    //Viết hàm cho phép nhập vào một số nguyên dương, kiểm tra xem số vừa nhập đó có phải là số hoàn hảo hay không.
+    // Chương trình sẽ trả về true nếu số đó là số hoàn hảo và false nếu không phải là số hoàn hảo.
+    // Lưu ý: Số hoàn hảo là số mà tổng các ước của nó bằng chính nó
+
+
+    function checkPerfectNum(){
+        let num;
+        do {
+            num = parseInt(prompt("Nhập vào một số nguyên dương: "));
+        } while (num < 0 || isNaN(num));
+
+        let sum = 0;
+        for(let i = 1; i < num; i++){
+            if (num % i === 0) {
+                sum += i;
+            }
+        }
+        if(sum === num){
+            alert("True");
+        } else {
+            alert("False");
+        }
+    }
+    checkPerfectNum();
+
+</script>
+</body>
+</html>

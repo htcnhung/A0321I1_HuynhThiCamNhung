@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<h1>Quản lý công nhân </h1>
+
+<input type="text" placeholder="Nhập họ và tên" id="name">
+<label> Ngày sinh<input type="date" id="birthday"></label>
+<input type="text" placeholder="Nhập địa chỉ" id="address">
+<label>Mức lương <input type="number" id="salary" placeholder="Nhập mức lương"></label>
+<input type="text" placeholder="Nhập chức vụ" id="position">
+<input type="button" onclick="addNewWorker()" value="Add">
+​
+<p id="hienThi"></p>
+<script>
+    class Worker {+
+        constructor(nameWorker, birthday, address, salary, position) {
+            this.nameWorker = nameWorker;
+            this.birthday = birthday;
+            this.address = address;
+            this.salary = salary;
+            this.position = position;
+        }
+
+        setNameWorker(nameWorker) {
+            this.nameWorker = nameWorker;
+        }
+
+        getNameWorker() {
+            return this.nameWorker;
+        }
+
+        setBirthday(birthday) {
+            this.birthday = birthday;
+        }
+
+        getBirthday() {
+            return this.birthday;
+        }
+
+        setAddress(birthday) {
+            this.birthday = birthday;
+        }
+
+        getAddress() {
+            return this.address;
+        }
+
+        setSalary(salary) {
+            this.salary = salary;
+        }
+
+        getSalary() {
+            return this.salary;
+        }
+
+        setPosition(position) {
+            this.position = position;
+        }
+
+        getPosition() {
+            return this.position;
+        }
+    }
+
+    let listWorker = [];
+    display(listWorker);
+
+    function compare(a, b) {
+        let typeA = a.nameWorker.toUpperCase();
+        let typeB = b.nameWorker.toUpperCase();
+
+        let comparison = 0;
+        if (typeA > typeB) {
+            comparison = 1;
+        } else if (typeA < typeB) {
+            comparison = -1;
+        }
+        return comparison;
+    }
+
+    function addNewWorker() {
+        let nameWorker = document.getElementById("name").value;
+        let birthday = document.getElementById("birthday").value;
+        let address = document.getElementById("address").value;
+        let salary = document.getElementById("salary").value;
+        let position = document.getElementById("position").value;
+        let worker = new Worker(nameWorker, birthday, address, salary, position);
+        listWorker.push(worker);
+        document.getElementById("name").value = "";
+        document.getElementById("birthday").value = "";
+        document.getElementById("address").value = "";
+        document.getElementById("salary").value = "";
+        document.getElementById("position").value = "";
+        listWorker.sort(compare);
+        display(listWorker);
+    }
+
+    function display(list) {
+        let tableString = '<table border="1" style="border: 1px solid">\n' +
+            '<tr>\n' +
+            '<th style="width: 20px">STT</th>' +
+            '<th style="width: 200px">Họ và Tên</th>' +
+            '<th style="width: 150px">Ngày sinh</th>' +
+            '<th style="width: 300px">Địa chỉ</th>' +
+            '<th style="width: 150px">Mức lương</th>' +
+            '<th style="width: 150px">Vị trí</th>' +
+            '</tr>';
+        for (let i = 0; i < list.length; i++) {
+            console.log(list);
+            tableString += '<tr>\n' +
+                '<td>' + (i + 1) + '</td>\n' +
+                '<td>' + list[i].getNameWorker() + '</td>\n' +
+                '<td>' + list[i].getBirthday() + '</td>\n' +
+                '<td>' + list[i].getAddress() + '</td>\n' +
+                '<td>' + list[i].getSalary() + '</td>\n' +
+                '<td>' + list[i].getPosition() + '</td>\n' +
+                '</tr>'
+        }
+        tableString += '</table>';
+
+        document.getElementById("hienThi").innerHTML = tableString;
+    }
+
+</script>
+</body>
+</html>
