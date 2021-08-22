@@ -11,7 +11,7 @@ public class StackClient {
         stack.push(1);
 
         System.out.println("1. Size of stack after push operations: " + stack.size());
-        System.out.printf("2. Pop elements from stack : ");
+        System.out.print("2. Pop elements from stack : ");
 
         while (!stack.isEmpty()) {
             System.out.printf(" %d", stack.pop());
