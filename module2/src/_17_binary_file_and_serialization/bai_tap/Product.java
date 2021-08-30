@@ -1,6 +1,8 @@
 package _17_binary_file_and_serialization.bai_tap;
 
-public class Product {
+import java.io.Serializable;
+
+public class Product implements Serializable {
     private int idProduct;
     private String nameProduct;
     private String maker;

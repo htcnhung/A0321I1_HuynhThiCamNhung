@@ -12,7 +12,7 @@ public class ProductManager {
                 "1. Add new product\n" +
                 "2. Display Product list \n" +
                 "3. Search Product");
-        switch (scanner.nextInt()) {
+        switch (Integer.parseInt(scanner.nextLine())) {
             case 1:
                 addNewProduct();
                 productManager();
@@ -56,7 +56,7 @@ public class ProductManager {
     //Phương thức hiển thị list sản phẩm lên màn hình
     public void displayProductList() {
         List<Product> productList = ReadWriteBinaryFile.readBinaryFile();
-        System.out.println("fsfsfsfs" + productList.size());
+        System.out.println("Danh sách sản phẩm: " + productList.size());
         for (Product product : productList) {
             System.out.println(product.toString());
         }

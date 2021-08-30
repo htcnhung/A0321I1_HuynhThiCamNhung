@@ -8,10 +8,10 @@ public class ReadWriteBinaryFile {
     //Tạo phương thức để đọc dữ liệu sản phẩm vào file dat ngoài
     public static void writeBinaryFile(Product product) {
         try {
-            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream("src/_17_binary_file_and_serialization/bai_tap/product list.dat"));
-            List<Product> myProduct = new ArrayList<>();
-            myProduct.add(product);
-            outputStream.writeObject(myProduct);
+            ObjectOutputStream outputStream = new ObjectOutputStream(new FileOutputStream( new File("src/_17_binary_file_and_serialization/bai_tap/product_list.dat"), true )) ;
+            List<Product> myProducts = new ArrayList<>();
+            myProducts.add(product);
+            outputStream.writeObject(myProducts);
             outputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -23,7 +23,7 @@ public class ReadWriteBinaryFile {
         List<Product> productsOut = null;
         try {
             ObjectInputStream objectInputStream = new ObjectInputStream(
-                    new FileInputStream(new File("src/_17_binary_file_and_serialization/bai_tap/product list.dat")));
+                    new FileInputStream(new File("src/_17_binary_file_and_serialization/bai_tap/product_list.dat")));
             productsOut = (List<Product>) objectInputStream.readObject();
             objectInputStream.close();
         } catch (IOException | ClassNotFoundException e) {
