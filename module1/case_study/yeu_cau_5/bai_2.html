@@ -18,39 +18,41 @@
                 array[x][y] = parseInt(prompt("Nhập phần tử con Array[" + x + "][" + y + "] trong mảng con"));
             }
         }
-        checkSoNguyenTo(array); //Hàm check số nguyên tố
-        DemSoLuongSNT(array, n, m); //Hàm đếm SL số nguyên tố và hiển thị
+        console.log(array);
+        demSoLuongSNT(array, n, m); //Hàm đếm SL số nguyên tố và hiển thị
     }
     //Hàm check số nguyên tố
     function checkSoNguyenTo(x) {
-        let check;
         if (x < 2) {
-            check = false;
+            return false;
         } else {
-            for (let i = 2; i < Math.sqrt(x); i++) {
+            for (let i = 2; i <= Math.sqrt(x); i++) {
                 if (x % i === 0) {
-                    check = false;
+                    return false;
                 }
             }
         }
-        check = true;
+        return true;
     }
 
     //Hàm đếm và liệt kê số nguyên tố
-    function DemSoLuongSNT(a, b, c) {
+    function demSoLuongSNT(a, b, c) {
         let count = 0;
+        let soNguyenTo = [];
         for (let i = 0; i < b; i++) {
             for (let j = 0; j < c; j++) {
                 if (checkSoNguyenTo(a[i][j])) {
                     count++;
                     console.log(count);
-                    document.write("Có " + count + " số nguyên tố, đó là: " + a[i][j]);
+                    soNguyenTo.push(a[i][j]);
                 }
             }
         }
+        document.write("Có " + count + " số nguyên tố, đó là: " + soNguyenTo);
     }
 
     taoMangHaiChieu();
+
 //Check lại hoặc hỏi thầy, chạy chưa ra kq
 
 </script>

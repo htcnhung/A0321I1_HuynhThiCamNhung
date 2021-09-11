@@ -9,6 +9,7 @@
     //Bài 3: Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.
     //Ví dụ: s1 = "aabcc" và s2 = "adcaa", thì kết quả commonCharacterCount(s1, s2) = 3.
     //⇨	2 xâu s1 và s2 có 3 kí tự chung: 2 kí tự 'a' và 1 kí tự 'c'.
+
     var str1 = prompt("Nhập xâu ký tự thứ nhất ");
     var str2 = prompt("Nhập xâu ký tự thứ hai ");
     let array1 = str1.split("").sort();
@@ -17,8 +18,12 @@
     console.log(array2);
     let newArray = [];
     for (let i = 0; i < array1.length; i++) {
-        if (array1[i] === array2[i]) {
-            newArray.push(array1[i]);
+        for (let j = 0; j<array2.length; j++){
+            if (array1[i] === array2[j]) {
+                newArray.push(array1[i]);
+                array2.splice(j,1);
+                array1.splice(i,1);
+            }
         }
     }
     console.log(newArray);

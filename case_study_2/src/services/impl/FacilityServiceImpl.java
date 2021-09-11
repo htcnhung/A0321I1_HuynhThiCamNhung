@@ -9,10 +9,7 @@ import services.FacilityService;
 import utils.ReadAndWriteFile;
 import utils.RegexData;
 
-import java.util.Collection;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class FacilityServiceImpl implements FacilityService {
     private static Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
