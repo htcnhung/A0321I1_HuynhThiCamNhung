@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/09_web_application_overview/bai1/bai1.iml" filepath="$PROJECT_DIR$/09_web_application_overview/bai1/bai1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/module3_1.iml" filepath="$PROJECT_DIR$/.idea/module3_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_web_application_overview/thuc_hanh1/thuc_hanh1.iml" filepath="$PROJECT_DIR$/09_web_application_overview/thuc_hanh1/thuc_hanh1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_web_application_overview/thuc_hanh2/thuc_hanh2.iml" filepath="$PROJECT_DIR$/09_web_application_overview/thuc_hanh2/thuc_hanh2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_web_application_overview/thuc_hanh3/thuc_hanh3.iml" filepath="$PROJECT_DIR$/09_web_application_overview/thuc_hanh3/thuc_hanh3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/09_web_application_overview/thuc_hanh4/thuc_hanh4.iml" filepath="$PROJECT_DIR$/09_web_application_overview/thuc_hanh4/thuc_hanh4.iml" />
+    </modules>
+  </component>
+</project>
