@@ -44,7 +44,7 @@
     <tr>
         <td>Trần Đăng Khoa</td>
         <td>1983-08-23</td>
-        <td>Đà NẵngHà Nội</td>
+        <td>Đà Nẵng\</td>
         <td><img src="anh4.jpg" style="width: 70px; height: 70px"></td>
     </tr>
     <tr>
