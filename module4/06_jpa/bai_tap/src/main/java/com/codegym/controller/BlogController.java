@@ -21,9 +21,8 @@ public class BlogController {
     BlogService blogService;
 
     @GetMapping(value = {"", "/"})
-        public String showList(Model model) {
-//        Pageable pageable = PageRequest.of(1, 5);
-        model.addAttribute("blogList", blogService.findAll());
+    public String showList(Model model, Pageable pageable) {
+        model.addAttribute("blogList", blogService.findAll(pageable));
         return "blogs/list";
     }
 
@@ -36,7 +35,7 @@ public class BlogController {
     @PostMapping(value = "/create")
     public String create(@ModelAttribute Blog blog) {
         blogService.save(blog);
-        return "redirect:/blog/";
+        return "redirect:blog";
     }
 
     @GetMapping(value = "/edit/{id}")
@@ -49,7 +48,7 @@ public class BlogController {
     @PostMapping(value = "/edit")
     public String edit(@ModelAttribute Blog blog) {
         blogService.save(blog);
-        return "redirect:/blog/";
+        return "redirect:blog";
     }
 
     @GetMapping(value = "/delete/{id}")
@@ -62,23 +61,20 @@ public class BlogController {
     @PostMapping(value = "/actionDelete/{id}")
     public String delete(@PathVariable("id") Long id, Model model) {
         blogService.delete(id);
-        Pageable pageable = PageRequest.of(1, 5);
-        List<Blog> blogList = blogService.findAll();
-        model.addAttribute("blogList", blogList);
-        return "blogs/search";
+        return "redirect:blog";
     }
 
     @GetMapping(value = "/search")
     public String searchByContent(@RequestParam(value = "search", required = false) String search, Model model, Pageable pageable) {
         //required: là false nghĩa là có thể có hoặc không
-//        if (search != null && !search.equals("")) {
-//            Page<Blog> blogList = blogService.findByContentContaining(search, pageable);
-//        } else {
-            List<Blog> blogList =  blogService.findAll();
-//        }
+        Page<Blog> blogList;
+        if (search != null && !search.equals("")) {
+            blogList = blogService.findByContentContaining(search, pageable);
+        } else {
+            blogList = blogService.findAll(pageable);
+        }
         model.addAttribute("blogList", blogList);
         return "blogs/search";
-
 
     }
 

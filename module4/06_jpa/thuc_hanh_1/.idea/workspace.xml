@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="396b095f-3943-4f6e-af61-4d89d291d8ba" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/.gradle/6.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/build/classes/java/main/com/codegym/config/AppConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/build/classes/java/main/com/codegym/config/AppConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/build/classes/java/main/com/codegym/controller/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/build/classes/java/main/com/codegym/controller/BlogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/build/classes/java/main/com/codegym/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/build/classes/java/main/com/codegym/service/BlogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/build/classes/java/main/com/codegym/service/impl/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/build/classes/java/main/com/codegym/service/impl/BlogServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/build/libs/bai_tap_1-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/build/libs/bai_tap_1-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/java/com/codegym/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/java/com/codegym/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/java/com/codegym/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/java/com/codegym/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/java/com/codegym/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/java/com/codegym/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/java/com/codegym/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/java/com/codegym/service/impl/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/../bai_tap/src/main/webapp/views/blogs/search.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="220AjIjsoBMW8s19OQoaKXN8knH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../07_spring_data_repository/thuc_hanh/thuc_hanh_1" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.thuc_hanh_1.service2.impl" />
+      <recent name="com.example.thuc_hanh_1.service2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CODEGYM\A0321I1_HuynhThiCamNhung\module4\06_jpa\thuc_hanh_1\src\main\resources\templates" />
+      <recent name="D:\CODEGYM\A0321I1_HuynhThiCamNhung\module4\06_jpa\thuc_hanh_1\src\main\resources\static" />
+      <recent name="D:\CODEGYM\A0321I1_HuynhThiCamNhung\module4\06_jpa\thuc_hanh_1\src\main\resources\templates\province\province" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ThucHanh1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="thuc_hanh_1.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.thuc_hanh_1.ThucHanh1Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="396b095f-3943-4f6e-af61-4d89d291d8ba" name="Default Changelist" comment="" />
+      <created>1638964264502</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638964264502</updated>
+      <workItem from="1638964272171" duration="2586000" />
+      <workItem from="1639389417403" duration="5320000" />
+      <workItem from="1639395494160" duration="70000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser" timestamp="1639395185005">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="488" y="70" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1639395185005" />
+    <state x="462" y="119" key="FileChooserDialogImpl" timestamp="1639395569204">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1639395569204" />
+    <state x="65" y="25" key="new project wizard" timestamp="1639395323145">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="65" y="25" key="new project wizard/0.0.1366.728@0.0.1366.728" timestamp="1639395323145" />
+  </component>
+</project>
