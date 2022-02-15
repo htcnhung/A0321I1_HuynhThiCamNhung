@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Employee</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-image: url("/img/details-1-background.jpg");
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container-fluid" th:include="~{/common/header::menuBar}">
+</div>
+<div class="container">
+    <h3>Edit Employee</h3>
+    <p>
+        <a class="btn btn-primary" th:href="@{/employee/list}">Back to Employee List</a>
+    </p>
+    <form th:action="@{/employee/edit}" method="post" th:object="${employee}">
+        <table class="table table-striped table-bordered">
+            <tr>
+                <input hidden type="text" th:field="*{employeeID}">
+            </tr>
+
+            <tr>
+                <td style="color: white">Name</td>
+                <td><input type="text" th:field="*{employeeName}">
+                    <p style="color: red" th:if="${#fields.hasErrors('employeeName')}" th:errors="*{employeeName}"></td>
+            </tr>
+
+
+            <tr>
+                <td style="color: white">Birth Day</td>
+                <td><input type="date" th:field="*{employeeBirthDay}">
+                    <p style="color: red" th:if="${#fields.hasErrors('employeeBirthDay')}"
+                       th:errors="*{employeeBirthDay}"></td>
+            </tr>
+            <tr>
+                <td style="color: white">Id Card</td>
+                <td>
+                    <input type="text" th:field="*{employeeIdCard}">
+                    <p style="color: red" th:if="${#fields.hasErrors('employeeIdCard')}" th:errors="*{employeeIdCard}">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: white">Salary</td>
+                <td>
+                    <input type="text" th:field="*{employeeSalary}">
+                    <p style="color: red" th:if="${#fields.hasErrors('employeeSalary')}" th:errors="*{employeeSalary}">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: white">Phone</td>
+                <td><input type="text" th:field="*{employeePhone}">
+                    <p style="color: red" th:if="${#fields.hasErrors('employeePhone')}" th:errors="*{employeePhone}">
+                </td>
+            </tr>
+            <tr>
+                <td style="color: white">Email</td>
+                <td><input type="text" th:field="*{employeeMail}">
+                    <p style="color: red" th:if="${#fields.hasErrors('employeeMail')}" th:errors="*{employeeMail}"></td>
+            </tr>
+
+            <tr>
+                <td style="color: white">Address</td>
+                <td><input type="text" th:field="*{employeeAddress}">
+                    <p style="color: red" th:if="${#fields.hasErrors('employeeAddress')}"
+                       th:errors="*{employeeAddress}"></td>
+            </tr>
+
+            <tr>
+                <td style="color: white">Position</td>
+                <td>
+                    <select th:field="*{positionId}">
+                        <option th:each="item : ${positions}" th:text="${item.getPositionName()}"
+                                th:value="${item.getPositionId()}"></option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: white">Degree</td>
+                <td>
+                    <select th:field="*{educationDegreeId}">
+                        <option th:each="item : ${educationDegrees}" th:text="${item.getEducationDegreeName()}"
+                                th:value="${item.getEducationDegreeId()}"></option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: white">Division</td>
+                <td>
+                    <select th:field="*{divisionId}">
+                        <option th:each="item : ${divisions}" th:text="${item.getDivisionName()}"
+                                th:value="${item.getDivisionID()}"></option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td style="color: white">User Name</td>
+                <td><input readonly type="text" th:field="*{user.username}"></td>
+            </tr>
+            <tr>
+                <input hidden type="text" th:field="*{user.useId}">
+            </tr>
+            <tr>
+                <input hidden type="text" th:field="*{user.password}">
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input class="btn btn-primary" type="submit" value="Save"></td>
+            </tr>
+        </table>
+
+    </form>
+
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

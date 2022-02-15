@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Question</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-image: url("/img/details-1-background.jpg");
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <h3>Edit Question</h3>
+    <p>
+        <a class="btn btn-primary" th:href="@{/question/list}">Back to Question List</a>
+    </p>
+    <form th:action="@{/question/edit}" method="post" th:object="${question}">
+        <table class="table table-striped table-bordered">
+            <tr>
+                <input hidden type="text" th:field="*{idQuestion}">
+            </tr>
+
+            <tr>
+                <td style="color: black">Title</td>
+                <td>
+                    <input type="text" th:field = "*{title}">
+                    <p style="color: red" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">
+                </td>
+
+            </tr>
+
+
+            <tr>
+                <td style="color: black">Question type</td>
+                <td>
+                    <select th:field="*{questionType}">
+                        <option th:each="item : ${questionTypes}" th:text="${item.name}" th:value="${item.idQuestionType}"></option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: black">Create date</td>
+                <td><input type="date" th:field = "*{date_create}">
+                    <p style="color: red" th:if="${#fields.hasErrors('date_create')}" th:errors="*{date_create}"></td>
+            </tr>
+
+            <tr>
+                <td style="color: black">User answer</td>
+                <td>
+                    <select th:field="*{userCreate}">
+                        <option th:each="item : ${users}" th:text="${item.username}" th:value="${item.idUser}"></option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: black">Status</td>
+                <td>
+                    <input type="radio" th:field="*{status}" value="0" />Chờ phản hồi
+                    <input type="radio" th:field="*{status}" value="1" />Đã phản hồi
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input class="btn btn-primary" type="submit" value="Save"></td>
+            </tr>
+        </table>
+
+    </form>
+
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+</html>

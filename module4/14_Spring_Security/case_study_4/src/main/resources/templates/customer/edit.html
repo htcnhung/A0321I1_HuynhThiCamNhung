@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url("/static/img/details-1-background.jpg");
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid" th:replace="~{/common/header::menuBar}"></div>
+<div class="container">
+    <h3>Edit Customer</h3>
+    <p>
+        <a class="btn btn-primary" th:href="@{/customer/list}">Back to Customer List</a>
+    </p>
+    <form th:action="@{/customer/edit}" method="post" th:object="${customer}">
+        <table class="table table-striped table-bordered">
+            <tr>
+                <input type="hidden" th:field="*{customerID}">
+            </tr>
+            <tr>
+                <td>Customer Type</td>
+                <td>
+                    <select th:field="*{customerType}">
+                        <option th:each="item :${customerTypes}" th:text="${item.getCustomerTypeName()}"
+                                th:value="${item.getCustomerTypeId()}"></option>
+                    </select>
+                </td>
+
+            </tr>
+            <tr>
+                <td style="color: darkslategrey"> Name</td>
+                <td>
+                    <input type="text" th:field="*{customerName}">
+                    <p style="color:red" th:if="${#fields.hasErrors('customerName')}"
+                       th:errors="*{customerName}"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: darkslategrey">Birth Day</td>
+                <td>
+                    <input type="date" th:field="*{customerBirthDay}">
+                    <p style="color:red" th:if="${#fields.hasErrors('customerBirthDay')}"
+                       th:errors="*{customerBirthDay}"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: darkslategrey">Gender</td>
+                <td style="color: darkslategrey">
+                    <input type="radio" th:field="*{customerGender}" value="0"> Female
+                    <input type="radio" th:field="*{customerGender}" value="1"> Male
+                    <input type="radio" th:field="*{customerGender}" value="2"> Unknown
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: darkslategrey">Id Card</td>
+                <td style="color: darkslategrey">
+                    <input type="text" th:field="*{customerIdCard}">
+                    <p style="color: yellow" th:if="${#fields.hasErrors('customerIdCard')}"
+                       th:errors="*{customerIdCard}">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: darkslategrey">Phone</td>
+                <td>
+                    <input type="text" th:field="*{customerPhone}">
+                    <p style="color:yellow" th:if="${#fields.hasErrors('customerPhone')}"
+                       th:errors="*{customerPhone}"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: darkslategrey">Email</td>
+                <td>
+                    <input type="text" th:field="*{customerMail}">
+                    <p style="color:yellow" th:if="${#fields.hasErrors('customerMail')}"
+                       th:errors="*{customerMail}"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="color: darkslategrey">Address</td>
+                <td><input type="text" th:field="*{customerAddress}">
+                    <p style="color: yellow" th:if="${#fields.hasErrors('customerAddress')}"
+                       th:errors="*{customerAddress}">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input class="btn btn-primary" type="submit" value="Save"></td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>
