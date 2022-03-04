@@ -1,0 +1,101 @@
+<!--<div class="container">-->
+<!--  <div class="d-flex" style="float: right">-->
+<!--    <form [formGroup]="formSearch" (ngSubmit)="search()">-->
+<!--      Name <input formControlName="name">-->
+<!--      Email <input formControlName="email">-->
+<!--      Xe Type <input formControlName="customerType">-->
+<!--      <button class="btn btn-outline-success my-2 my-sm-0">Search</button>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--  <hr>-->
+<!--  <div class="container" style="text-align: center; clear: both;">-->
+<!--    <h1>Xe Management</h1>-->
+<!--  </div>-->
+
+<!--  <table class="table table-striped">-->
+<!--    <thead style="color: #157347">-->
+<!--    <tr>-->
+<!--      <th>ID</th>-->
+<!--      <th>Name</th>-->
+<!--      <th>Birthday</th>-->
+<!--      <th>Email</th>-->
+<!--      <th>Xe Type</th>-->
+<!--      <th>Action</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr *ngFor="let cus of customerList | paginate: { itemsPerPage: 3, currentPage: p}">-->
+<!--      <td>{{cus.id}}</td>-->
+<!--      <td>{{cus.name}}</td>-->
+<!--      <td>{{cus.birthday | date: 'dd/MM/yyyy'}}</td>-->
+<!--      <td>{{cus.email}}</td>-->
+<!--      <td>{{cus.customerType.typeName}}</td>-->
+<!--      <td>-->
+<!--        <button mat-button (click)="openDialogDelete(cus.id, cus.name)" class="btn btn-danger">Delete</button>-->
+<!--        <a [routerLink]="['edit',cus.id]">Edit</a>-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--  </table>-->
+<!--  <pagination-controls (pageChange)="p = $event"></pagination-controls>-->
+<!--</div>-->
+
+
+<div class="container">
+  <div class="d-flex" style="float: right;">
+    <!--            <input name="inputSearch" style="width: 300px" class="form-control mr-sm-2" type="text"-->
+    <!--                   placeholder="Search by name" [(ngModel)]="term">-->
+<!--    <input name="inputSearch" style="width: 300px" class="form-control mr-sm-2" type="text"-->
+<!--           placeholder="Search by name" [(ngModel)]="name">-->
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="search()">Search</button>
+  </div>
+  <div class="container" style="text-align: center; clear: both;">
+    <h1>Employee Management</h1>
+  </div>
+  <div class="container">
+    <!--        &lt;!&ndash; Button trigger modal &ndash;&gt;-->
+    <!--        <div style="float: left">-->
+    <!--            <button [routerLink]="['/employee-create']" type="button" class="btn btn-primary" id="idModalCreate" data-toggle="modal" data-target="#modelId">-->
+    <!--                Add New Employee-->
+    <!--            </button>-->
+    <!--        </div>-->
+    <div style="float: left">
+      <button class="btn icon-btn btn-success" type = "button" [routerLink]="['create']"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle text-success"></span>Add</button>
+    </div>
+    <div style="float: left; margin-left: 10px">
+      <a class="btn icon-btn btn-info" href="#" [routerLink]="['']"><span class="glyphicon btn-glyphicon glyphicon-arrow-left img-circle text-info"></span>Back</a>
+      <!--            <a class="btn btn-primary" href="#" [routerLink]="['']">Back To Home</a><br/>-->
+    </div>
+  </div>
+  <input type="hidden"  id="check">
+  <h3  style="color: red"></h3>
+  <table class="table table-bordered" style="font-size: 12px;" >
+    <thead>
+    <tr style="text-align: center; color: rgb(46, 25, 25);">
+      <!-- <th>STT</th> -->
+      <th>ID</th>
+      <th>Name</th>
+      <th>Birthday</th>
+      <th>Email</th>
+      <th>Xe Type</th>
+      <th>Action</th>
+      <th style="width: 12%">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr style="text-align:center" *ngFor="let cus of customerList | paginate: { itemsPerPage: 3, currentPage: p}">
+      <td>{{cus.id}}</td>
+      <td>{{cus.name}}</td>
+      <td>{{cus.birthday | date: 'dd/MM/yyyy'}}</td>
+      <td>{{cus.email}}</td>
+      <td>{{cus.customerType.typeName}}</td>
+      <td>
+        <button class="btn icon-btn btn-warning btn-sm" [routerLink]="['edit',cus.id]"><span class="glyphicon btn-glyphicon glyphicon-edit img-circle text-warning"></span></button>
+        <!--                <button class="btn btn-danger btn-sm" (click)="openDialog(employee.id)">Delete</button>-->
+        <button class="btn icon-btn btn-danger btn-sm" (click)="openDialogDelete(cus.id, cus.name)"><span class="glyphicon btn-glyphicon glyphicon-trash img-circle text-danger"></span></button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

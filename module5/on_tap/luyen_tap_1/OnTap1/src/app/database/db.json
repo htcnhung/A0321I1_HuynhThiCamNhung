@@ -1,0 +1,52 @@
+{
+  "customerType": [
+    {
+      "id": 1,
+      "typeName": "Diamond"
+    },
+    {
+      "id": 2,
+      "typeName": "Platinum"
+    },
+    {
+      "id": 3,
+      "typeName": "Gold"
+    },
+    {
+      "id": 4,
+      "typeName": "Silver"
+    }
+  ],
+  "customer": [
+    {
+      "id": 8,
+      "name": "Khoa",
+      "birthday": "1996-12-14",
+      "email": "dlak@gmail.com",
+      "customerType": {
+        "id": 2,
+        "typeName": "Platinum"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Loan",
+      "birthday": "1990-08-14",
+      "email": "hnml@gmail.com",
+      "customerType": {
+        "id": 4,
+        "typeName": "Silver"
+      }
+    },
+    {
+      "id": "15",
+      "name": "Nhung",
+      "birthday": "1998-02-11",
+      "email": "thanhtuandn.1506@gmail.com",
+      "customerType": {
+        "id": 2,
+        "typeName": "Platinum"
+      }
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "loai-xe": [
+    {
+      "id_loai_xe": 1,
+      "name": "Giường nằm"
+    },
+    {
+      "id_loai_xe": 2,
+      "name": "Ghế ngồi"
+    }
+  ],
+  "xe-khach": [
+    {
+      "id": 1111,
+      "loai_xe": {
+        "id_loai_xe": 1,
+        "name": "Giường nằm"
+      },
+      "ten_nha_xe": "Mai Linh",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Huế",
+      "tel": "0935666666",
+      "gio_di": "15:20",
+      "gio_den": "19:20"
+    },
+    {
+      "id": 1112,
+      "loai_xe": {
+        "id_loai_xe": 1,
+        "name": "Giường nằm"
+      },
+      "ten_nha_xe": "Sun",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Huế",
+      "tel": "0935666666",
+      "gio_di": "15:20",
+      "gio_den": "19:20"
+    },
+    {
+      "id": 1113,
+      "loai_xe": {
+        "id_loai_xe": 2,
+        "name": "Ghế ngồi"
+      },
+      "ten_nha_xe": "Mai Linh",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Huế",
+      "tel": "0935666666",
+      "gio_di": "15:20",
+      "gio_den": "19:20"
+    },
+    {
+      "id": 1114,
+      "loai_xe": {
+        "id_loai_xe": 1,
+        "name": "Giường nằm"
+      },
+      "ten_nha_xe": "Mai Linh",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Huế",
+      "tel": "0935666666",
+      "gio_di": "15:20",
+      "gio_den": "19:20"
+    },
+    {
+      "id": 1115,
+      "loai_xe": {
+        "id_loai_xe": 1,
+        "name": "Giường nằm"
+      },
+      "ten_nha_xe": "Mai Linh",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Huế",
+      "tel": "0935666666",
+      "gio_di": "15:20",
+      "gio_den": "19:20"
+    },
+    {
+      "id": 1116,
+      "loai_xe": {
+        "id_loai_xe": 1,
+        "name": "Giường nằm"
+      },
+      "ten_nha_xe": "Mai Linh",
+      "diem_di": "Đà Nẵng",
+      "diem_den": "Huế",
+      "tel": "0935666666",
+      "gio_di": "15:20",
+      "gio_den": "19:20"
+    }
+  ]
+}

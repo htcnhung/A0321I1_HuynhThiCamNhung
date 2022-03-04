@@ -1,0 +1,61 @@
+<h3 class="text-center">Thêm Mới Khách Hàng</h3>
+
+<form class="w-75 mx-auto mt-3" [formGroup]="formCreateNewCustomer" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <p>Mã KH</p>
+    <input class="form-control" type="text" formControlName="id">
+    <p *ngIf="formCreateNewCustomer.controls.id.errors?.required &&
+                  formCreateNewCustomer.controls.id.touched"
+       class="text-danger">Vui lòng nhập mã khách hàng</p>
+    <p *ngIf="formCreateNewCustomer.controls.id.errors?.pattern &&
+                  formCreateNewCustomer.controls.id.touched"
+       class="text-danger">Mã KH phải có định dạng là: KH-XXXX (X là số)</p>
+  </div>
+
+  <div class="form-group">
+    <p>Họ Và Tên</p>
+    <input class="form-control" type="text" formControlName="name">
+    <p *ngIf="formCreateNewCustomer.controls.name.errors?.required &&
+                  formCreateNewCustomer.controls.name.touched"
+       class="text-danger">Vui lòng nhập họ và tên</p>
+  </div>
+
+  <div class="form-group">
+    <p>Ngày Sinh</p>
+    <input class="form-control" type="date" formControlName="birthday">
+    <p *ngIf="formCreateNewCustomer.controls.birthday.errors?.required &&
+                  formCreateNewCustomer.controls.birthday.touched"
+       class="text-danger">Vui lòng nhập ngày sinh</p>
+  </div>
+
+  <div class="form-group">
+    <p>Email</p>
+    <input class="form-control" type="text" formControlName="email">
+    <p *ngIf="formCreateNewCustomer.controls.email.errors?.required &&
+                  formCreateNewCustomer.controls.email.touched"
+       class="text-danger">Vui lòng nhập email</p>
+    <p *ngIf="formCreateNewCustomer.controls.email.errors?.email &&
+                  formCreateNewCustomer.controls.email.touched"
+       class="text-danger">Email không đúng định dạng</p>
+  </div>
+
+  <div class="form-group">
+    <label>Xe Type</label>
+    <select [compareWith]="compareFn" class="form-control" formControlName="customerType">
+      <ng-container *ngFor="let customerType of listCustomerType">
+        <option [ngValue]="customerType">{{customerType.typeName}}</option>
+      </ng-container>
+    </select>
+    <p *ngIf="formCreateNewCustomer.controls.customerType.errors?.required &&
+                  formCreateNewCustomer.controls.customerType.touched"
+       class="text-danger">Vui lòng chọn loại khách hàng!</p>
+  </div>
+
+  <div class="row d-flex justify-content-center mt-4">
+    <button type="submit" [disabled]="formCreateNewCustomer.invalid"
+            class="btn btn-success">Thêm Mới
+    </button>
+  </div>
+
+</form>
+
